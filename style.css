@@ -1,0 +1,157 @@
+.hero-section {
+    background: url('assets/images/banner.jpg') no-repeat center center/cover;
+    overflow: hidden;
+}
+
+.hero-section .background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(5px);
+    z-index: 1;
+}
+
+.hero-section .container {
+    z-index: 2;
+    position: relative;
+}
+.Header{
+    background: transparent;
+}
+/* Navbar Links */
+.nav-link {
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffc107;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Additional styles */
+.rent-section {
+    padding: 2rem 0;
+}
+#rent-section{
+    background-color: #17dcff;
+}
+
+.rent-table {
+    display: none;
+    /* Initially hidden */
+}
+.payment-method img {
+    width: 60px;
+    height: 30px;
+}
+.payment-method a {
+    margin-left: 10px;
+}
+#payment-section{
+    background-color: #291069;
+    color: white;
+}
+.paybkash{
+    background-color: #ff1692;
+    color: white;
+}
+.paybkash:hover{
+    background-color: #be1670;
+    color: white;
+}
+
+
+#contact {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-item img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    padding: 12px;
+    width: 100%;
+    background: linear-gradient(to right, #1abc9c, #16a085);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(to right, #16a085, #1abc9c);
+}
