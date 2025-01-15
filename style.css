@@ -18,9 +18,11 @@
     z-index: 2;
     position: relative;
 }
-.Header{
+
+.Header {
     background: transparent;
 }
+
 /* Navbar Links */
 .nav-link {
     font-weight: bold;
@@ -31,6 +33,81 @@
     color: #ffc107;
 }
 
+
+
+/* Full-screen menu styles */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: none;
+    /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Show menu when active */
+.mobile-menu.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Close button */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Mobile menu links */
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+}
+
+/* Toggle Button for Mobile */
+#menuToggle {
+    display: flex;
+}
+
+#menuToggle button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
+
+
+
+
+
+
 /* Card Hover Effect */
 .card:hover {
     transform: translateY(-5px);
@@ -40,8 +117,10 @@
 /* Additional styles */
 .rent-section {
     padding: 2rem 0;
+    background-image: url('data:image/jpeg;base64,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');
 }
-#rent-section{
+
+#rent-section {
     background-color: #17dcff;
 }
 
@@ -49,87 +128,82 @@
     display: none;
     /* Initially hidden */
 }
+
 .payment-method img {
     width: 60px;
     height: 30px;
 }
+
 .payment-method a {
     margin-left: 10px;
 }
-#payment-section{
-    background-color: #291069;
+
+#payment-section {
+    background: url('assets/images/payment_banner.jpg') no-repeat center center/cover;
+    overflow: hidden;
     color: white;
+
 }
-.paybkash{
+
+.paybkash {
     background-color: #ff1692;
     color: white;
 }
-.paybkash:hover{
+
+.paybkash:hover {
     background-color: #be1670;
     color: white;
 }
 
 
-#contact {
-    padding: 50px 0;
-    background-color: #f8f9fa;
-}
 
+/* General Styles */
 .contact-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
 }
 
-.contact-info {
-    flex: 1;
+.contact-info,
+.contact-form {
+    background: #fff;
     padding: 20px;
-    background-color: white;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info h2 {
-    margin-bottom: 20px;
+.contact-info .contact-item {
+    margin-bottom: 15px;
 }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+.contact-info .icon {
+    font-size: 24px;
+    color: #3498db;
+    margin-right: 10px;
 }
 
-.contact-item img {
-    width: 30px;
-    margin-right: 15px;
+.contact-info a {
+    display: inline-block;
+    margin-top: 5px;
 }
 
 .social-icons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-.social-icons img {
-    width: 30px;
-}
-
-.contact-form {
-    flex: 1;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form h2 {
-    margin-bottom: 20px;
+.social-icons a {
+    margin: 0 10px;
+    color: #3498db;
+    font-size: 24px;
 }
 
 .contact-form label {
-    font-size: 1rem;
-    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
 }
 
 .contact-form input,
@@ -137,21 +211,24 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .contact-form button {
-    padding: 12px;
+    display: block;
     width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
     background: linear-gradient(to right, #1abc9c, #16a085);
     border: none;
-    color: white;
-    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
 }
 
 .contact-form button:hover {
     background: linear-gradient(to right, #16a085, #1abc9c);
 }
+

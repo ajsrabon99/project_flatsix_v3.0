@@ -1,0 +1,45 @@
+/* Responsive styles */
+@media (min-width: 992px) {
+    #menuToggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+}
+
+/* Responsive Design for contact section */
+@media (max-width: 768px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info, .contact-form {
+        margin-bottom: 20px;
+    }
+
+    .contact-info .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info .icon {
+        font-size: 20px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 14px;
+    }
+}

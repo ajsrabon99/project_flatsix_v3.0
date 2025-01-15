@@ -4,22 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOI Clone with Rent and Members</title>
+    <title>Bachelor Zone</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
     <!-- Header -->
-    <header class="Header text-black py-3">
+    <header class="Header text-black py-3 position-relative">
         <div class="container d-flex align-items-center justify-content-between">
             <a href="#" class="navbar-brand d-flex align-items-center text-white">
                 <img src="assets/images/zone.jpeg" alt="Logo" class="me-3" style="width: 50px;">
                 <h1 class="fs-4 mb-0 text-black">Bachelor Zone</h1>
             </a>
-            <nav>
+
+            <!-- Menu Toggle Button -->
+            <div id="menuToggle" class="d-lg-none">
+                <button id="openMenu" class="btn btn-dark">☰</button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="d-none d-lg-flex">
                 <ul class="nav">
                     <li class="nav-item">
                         <a href="#" class="nav-link text-black">Home</a>
@@ -49,7 +57,40 @@
                 </ul>
             </nav>
         </div>
+
+        <!-- Full-Screen Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu">
+            <button id="closeMenu" class="btn btn-light text-dark close-button">X</button>
+            <ul class="nav flex-column text-center">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-black">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link text-black">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#rent-section" class="nav-link text-black">Rent Details</a>
+                </li>
+                <li class="nav-item">
+                    <a href="member.html" class="nav-link text-black">Members</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#payment-section" class="nav-link text-black">Payment</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-dark text-info me-2" data-bs-toggle="modal" data-bs-target="#signInModal">
+                        Sign In
+                    </button>
+                    <button class="btn btn-outline-dark text-pink" data-bs-toggle="modal" data-bs-target="#signUpModal">
+                        Sign Up
+                    </button>
+                </li>
+            </ul>
+        </div>
     </header>
+
+
+
     <!-- sign-in      -->
     <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -70,7 +111,8 @@
                             <button type="submit" class="btn btn-info w-100 text-white">Log In</button>
                         </form>
                         <p class="text-center mt-3">
-                            Don't have an account? <a href="#" class="text-info">Sign up</a>
+                            Don't have an account? <a href="#" class="text-info" data-bs-dismiss="modal"
+                                data-bs-toggle="modal" data-bs-target="#signUpModal">Sign up</a>
                         </p>
                         <div class="buttons-container text-center mt-4">
                             <button class="btn btn-dark w-100 mb-2 d-flex align-items-center justify-content-center">
@@ -140,49 +182,61 @@
         <div class="container">
             <div class="row align-items-center">
                 <!-- Text Column -->
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
                     <h2 class="mb-4">About Bachelor Zone</h2>
                     <p class="lead">
                         This is a flat where bachelor students live and study.
                     </p>
                     <p>
-                        Welcome to Bachelor Zone, the ideal living space for bachelor students in Dhaka, Bangladesh. Our flat caters to the needs of students pursuing higher education at Polytechnic or Engineering institutions, providing a comfortable and conducive environment for living and studying.
+                        Welcome to Bachelor Zone, the ideal living space for bachelor students in Dhaka, Bangladesh. Our
+                        flat caters to the needs of students pursuing higher education at Polytechnic or Engineering
+                        institutions, providing a comfortable and conducive environment for living and studying.
                     </p>
                     <h3>Our Story</h3>
                     <p>
-                        Established on June 01, 2024, Bachelor Zone was founded with the vision of creating a tailored living space for bachelor students. We understand the unique requirements of students living away from home, and our flat is designed to meet those needs.
+                        Established on June 01, 2024, Bachelor Zone was founded with the vision of creating a tailored
+                        living space for bachelor students. We understand the unique requirements of students living
+                        away from home, and our flat is designed to meet those needs.
                     </p>
                     <h3>What We Offer</h3>
                     <p>
-                        At Bachelor Zone, students can expect more than just a place to stay. Our flat offers a range of amenities to enhance the living experience, including high-speed internet, study areas, and recreational spaces. Safety and security are our top priorities, ensuring peace of mind for residents.
+                        At Bachelor Zone, students can expect more than just a place to stay. Our flat offers a range of
+                        amenities to enhance the living experience, including high-speed internet, study areas, and
+                        recreational spaces. Safety and security are our top priorities, ensuring peace of mind for
+                        residents.
                     </p>
                     <h3>Our Mission</h3>
                     <p>
-                        Our mission at Bachelor Zone is to provide a supportive and enriching environment for bachelor students to thrive academically and personally. We aim to foster a sense of community and belonging among residents, creating lasting memories and friendships.
+                        Our mission at Bachelor Zone is to provide a supportive and enriching environment for bachelor
+                        students to thrive academically and personally. We aim to foster a sense of community and
+                        belonging among residents, creating lasting memories and friendships.
                     </p>
                     <p>
                         Experience the perfect blend of comfort, convenience, and community living at Bachelor Zone.
                     </p>
                 </div>
-    
+
                 <!-- Image Column -->
-                <div class="col-md-6 text-center">
+                <div class="col-lg-6 col-md-12 text-center">
                     <img src="https://cdn.ostad.app/public/upload/2024-09-01T12-16-44.254Z-Untitled%20design%20(1).png"
-                        alt="Bachelor Zone Image" class="img-fluid rounded">
+                        alt="Bachelor Zone Image" class="img-fluid rounded w-75">
                 </div>
             </div>
         </div>
     </section>
-    
+
+
 
 
     <!-- Rent Details Section -->
     <section id="rent-section" class="rent-section py-5">
         <div class="container">
-            <h3 class="text-center mb-4">Rent Details</h3>
+            <h3 class="text-center mb-4 text-white">Rent Details</h3>
             <div class="text-center">
-                <button id="toggleTableBtn" class="btn btn-outline-light mb-4">Show Rent Details</button>
+                <button id="toggleTableBtn" class="btn btn-outline-light mb-4">>>Show Rent Details<<< /button>
             </div>
+            <p class="text-center text-white">Click on <strong>"Show Rent Details"</strong> button to view rent details
+            </p>
             <div id="rentTable" class="rent-table" style="display: none;">
                 <table class="table table-bordered text-center">
                     <thead class="table-dark">
@@ -295,9 +349,11 @@
 
 
 
-
     <!-- Payment Section -->
-    <section id="payment-section" class="py-5">
+    <section id="payment-section"
+        class="payment-section text-center text-white d-flex align-items-center justify-content-center position-relative"
+        style="height: 75vh;">
+        <div class="background-blur"></div>
         <div class="container">
             <h3 class="text-center mb-4">Payment</h3>
 
@@ -355,37 +411,42 @@
 
     <section id="contact">
         <div class="container contact-section">
+            <!-- Contact Info -->
             <div class="contact-info">
-                <h2 style="text-align: center; color: #3498db;">Contact Info</h2>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt" style="font-size: 24px; color: #3498db;"></i>
-                    <span><strong>Location</strong><br>
+                <h2 class="text-center" style="color: #3498db;">Contact Info</h2>
+                <div class="contact-item d-flex align-items-start">
+                    <i class="fas fa-map-marker-alt icon"></i>
+                    <span>
+                        <strong>Location</strong><br>
                         <a style="color: rgb(166, 166, 154); text-decoration: none;">
                             Modhubag 3no Guli, Hatijheel, Mogbazar, Dhaka
                         </a>
                     </span>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope" style="font-size: 24px; color: #3498db;"></i>
-                    <span><strong>E-mail</strong><br>
+                <div class="contact-item d-flex align-items-start">
+                    <i class="fas fa-envelope icon"></i>
+                    <span>
+                        <strong>E-mail</strong><br>
                         <a style="color: rgb(166, 166, 154); text-decoration: none;">ashrafuzzamansrabon@gmail.com</a>
                     </span>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt" style="font-size: 24px; color: #3498db;"></i>
-                    <span><strong>Phone No</strong><br>
+                <div class="contact-item d-flex align-items-start">
+                    <i class="fas fa-phone-alt icon"></i>
+                    <span>
+                        <strong>Phone No</strong><br>
                         <a style="color: rgb(166, 166, 154); text-decoration: none;">+8801327-206804</a>
                     </span>
                 </div>
                 <hr>
-                <div class="social-icons">
+                <div class="social-icons text-center">
                     <span>Follow Us:</span>
-                    <a href="#"><i class="fab fa-facebook" style="font-size: 24px; color: #3498db;"></i></a>
-                    <a href="#"><i class="fab fa-twitter" style="font-size: 24px; color: #3498db;"></i></a>
-                    <a href="#"><i class="fab fa-instagram" style="font-size: 24px; color: #3498db;"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
+            <!-- Contact Form -->
             <form class="contact-form">
                 <h2 style="color: #3498db;">Contact Us</h2>
                 <label for="name">Name:</label>
@@ -397,26 +458,24 @@
                 <label for="message">Message:</label>
                 <textarea id="message" required></textarea>
 
-                <button type="submit" style="background: linear-gradient(to right, #1abc9c, #16a085);">Send
-                    Message</button>
+                <button type="submit">Send Message</button>
             </form>
         </div>
     </section>
 
+    
 
-    <!-- Footer -->
+
+
     <footer class="bg-primary text-white py-4">
         <div class="container text-center">
             <p class="mb-0">© 2025 Bachelor Zone. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JavaScript -->
     <script>
-        // Toggle Rent Table
         const toggleTableBtn = document.getElementById('toggleTableBtn');
         const rentTable = document.getElementById('rentTable');
 
@@ -430,6 +489,7 @@
             }
         });
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
