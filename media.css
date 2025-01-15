@@ -43,3 +43,27 @@
         font-size: 14px;
     }
 }
+
+
+/* Responsive rent-table */
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+}
