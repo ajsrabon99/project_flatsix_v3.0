@@ -1,34 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Members</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="./assets/images/zone.jpeg">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <!-- Header -->
+    <header class="Header text-white py-3 position-relative">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center text-white">
+                <img src="assets/images/zone.jpeg" alt="Logo" class="me-3" style="width: 50px;">
+                <h1 class="fs-4 mb-0 text-white">Bachelor Zone</h1>
+            </a>
+
+            <div id="menuToggle" class="d-lg-none">
+                <button id="openMenu" class="btn btn-light">☰</button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="d-none d-lg-flex">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link text-white">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#rent-section" class="nav-link text-white">Rent Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="member.html" class="nav-link text-white">Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#payment-section" class="nav-link text-white">Payment</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Full-Screen Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu">
+            <button id="closeMenu" class="btn btn-dark text-white close-button">X</button>
+            <ul class="nav flex-column text-center">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link text-white">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#rent-section" class="nav-link text-white">Rent Details</a>
+                </li>
+                <li class="nav-item">
+                    <a href="member.html" class="nav-link text-white">Members</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#payment-section" class="nav-link text-white">Payment</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
     <!-- Members Section -->
-    <section id="members-section" class="bg-warning py-5">
+    <section id="members-section" class="py-5">
         <div class="container">
             <h3 class="text-center mb-4">Members</h3>
-            <h1 class="text-center mb-4">Update will Coming</h1>
             <div class="row" id="members-container">
                 <!-- Member 1 -->
                 <div class="col-md-4">
                     <div class="card p-3 mb-4">
-                        <img src="member1.jpg" class="card-img-top" alt="John Doe">
+                        <img src="assets/members image/Aj_srabon.jpg" class="card-img-top" alt="Srabon">
                         <div class="card-body">
-                            <h5>Name: Hello World</h5>
-                            <p>Phone: +123 456 7890</p>
-                            <p>Address: 123 Street, React, Python</p>
-                            <p>Position: Manager</p>
+                            <h5>Name: AJ Srabon</h5>
+                            <p>Phone: 01327-206804</p>
+                            <p>Address: Sonaimuri, Noakhali</p>
+                            <p>Position: Flat Maneger</p>
                             <div>
-                                <a href="https://wa.me/1234567890" class="btn btn-success btn-sm me-2" target="_blank">
+                                <a href="https://wa.me/+8801907714651" class="btn btn-success btn-sm me-2"
+                                    target="_blank">
                                     <i class="fab fa-whatsapp"></i> WhatsApp
                                 </a>
-                                <a href="https://facebook.com/johndoe" class="btn btn-primary btn-sm" target="_blank">
+                                <a href="https://www.facebook.com/ashrafuzzaman.srabon.5" class="btn btn-primary btn-sm"
+                                    target="_blank">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Member 2 -->
+                <div class="col-md-4">
+                    <div class="card p-3 mb-4">
+                        <img src="assets/members image/tanvir_.jpg" class="card-img-top" alt="Tanvir">
+                        <div class="card-body">
+                            <h5>Name: Tanvir Haque</h5>
+                            <p>Phone: 01909-101002</p>
+                            <p>Address: Mymensingh Sadar</p>
+                            <p>Position: Asst Manager</p>
+                            <div>
+                                <a href="https://wa.me/+8801909101002" class="btn btn-success btn-sm me-2" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                                <a href="https://www.facebook.com/profile.php?id=100062826562495" class="btn btn-primary btn-sm" target="_blank">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Member 3 -->
+                <div class="col-md-4">
+                    <div class="card p-3 mb-4">
+                        <img src="assets/members image/Sizar.jpg" class="card-img-top" alt="Sizar">
+                        <div class="card-body">
+                            <h5>Name: Farhan Farhan Sizar</h5>
+                            <p>Phone: 01783-365158</p>
+                            <p>Address: Trishal, Mymensingh </p>
+                            <p>Position: Member</p>
+                            <div>
+                                <a href="https://wa.me/+8801783365158" class="btn btn-success btn-sm me-2" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                                <a href="https://www.facebook.com/farhanshahriar.sijar" class="btn btn-primary btn-sm" target="_blank">
                                     <i class="fab fa-facebook"></i> Facebook
                                 </a>
                             </div>
@@ -39,6 +140,13 @@
             <!-- See More Button -->
             <div class="text-center">
                 <button id="seeMoreBtn" class="btn btn-info mt-4">See More Members</button>
+            </div>
+            <hr class="bg-light">
+            <!-- Back Button -->
+            <div class="text-center mb-4">
+                <a href="index.html" class="btn btn-danger">
+                    <i class="fas fa-arrow-left"></i> Back
+                </a>
             </div>
         </div>
     </section>
@@ -55,17 +163,117 @@
         const additionalMembers = `
             <div class="col-md-4">
                 <div class="card p-3 mb-4">
-                    <img src="member2.jpg" class="card-img-top" alt="Jane Smith">
+                    <img src="assets/members image/Rafi.jpg" class="card-img-top" alt="Rafi">
                     <div class="card-body">
-                        <h5>Name: Jane Smith</h5>
-                        <p>Phone: +987 654 3210</p>
-                        <p>Address: 456 Avenue, City, Country</p>
+                        <h5>Name: Ajmain Rafi</h5>
+                        <p>Phone: 01843-591191</p>
+                        <p>Address: Daudkandi, Cumilla</p>
                         <p>Position: Member</p>
                         <div>
-                            <a href="https://wa.me/9876543210" class="btn btn-success btn-sm me-2" target="_blank">
+                            <a href="https://wa.me/+8801843591191" class="btn btn-success btn-sm me-2" target="_blank">
                                 <i class="fab fa-whatsapp"></i> WhatsApp
                             </a>
-                            <a href="https://facebook.com/janesmith" class="btn btn-primary btn-sm" target="_blank">
+                            <a href="https://www.facebook.com/profile.php?id=100084487072838" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 mb-4">
+                    <img src="assets/members image/Ucchas.jpg" class="card-img-top" alt="Ucchas">
+                    <div class="card-body">
+                        <h5>Name: Nafiz Ahmed Ucchas</h5>
+                        <p>Phone: 01611-327443</p>
+                        <p>Address: Trishal, Mymensingh</p>
+                        <p>Position: Member</p>
+                        <div>
+                            <a href="https://wa.me/+8801611327443" class="btn btn-success btn-sm me-2" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100080665862477" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 mb-4">
+                    <img src="assets/members image/Tafsir.jpg" class="card-img-top" alt="Tafsir">
+                    <div class="card-body">
+                        <h5>Name: Tafsir Hasan</h5>
+                        <p>Phone: 01608-684776</p>
+                        <p>Address: Cumilla</p>
+                        <p>Position: Member</p>
+                        <div>
+                            <a href="https://wa.me/+8801608684776" class="btn btn-success btn-sm me-2" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.facebook.com/tafsir.hassa007" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 mb-4">
+                    <img src="assets/members image/Tuhin.jpg" class="card-img-top" alt="Tuhin">
+                    <div class="card-body">
+                        <h5>Name: Rahinur Yousuf Tuhin</h5>
+                        <p>Phone: 01610-545515</p>
+                        <p>Address: Mymensingh</p>
+                        <p>Position: Member</p>
+                        <div>
+                            <a href="https://wa.me/+8801610545515" class="btn btn-success btn-sm me-2" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100090967957976" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 mb-4">
+                    <img src="assets/members image/Rifat.jpg" class="card-img-top" alt="Rifat">
+                    <div class="card-body">
+                        <h5>Name: Muhammad Rifat</h5>
+                        <p>Phone: 01821-491592</p>
+                        <p>Address: Kalihati, Tangail</p>
+                        <p>Position: Member</p>
+                        <div>
+                            <a href="https://wa.me/+8801821491592" class="btn btn-success btn-sm me-2" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100026022399594&mibextid=ZbWKwL" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 mb-4">
+                    <img src="assets/members image/Asiq.jpg" class="card-img-top" alt="Asiq">
+                    <div class="card-body">
+                        <h5>Name: Asiq</h5>
+                        <p>Phone: 01324-084518</p>
+                        <p>Address: **** </p>
+                        <p>Position: Member</p>
+                        <div>
+                            <a href="https://wa.me/88" class="btn btn-success btn-sm me-2" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://facebook.com/99" class="btn btn-primary btn-sm" target="_blank">
                                 <i class="fab fa-facebook"></i> Facebook
                             </a>
                         </div>
@@ -81,4 +289,5 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

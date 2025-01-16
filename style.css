@@ -24,8 +24,15 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    overflow: hidden;    
+    overflow: hidden;
+    position: fixed; /* Fix the header to the top */
+    top: 0; /* Position it at the top of the viewport */
+    width: 100%; /* Make the header span the full width */
+    z-index: 1000; /* Ensure it stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better visibility */
+
 }
+
 
 /* Navbar Links */
 .nav-link {
@@ -53,12 +60,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 999;
+    display: none;
     transition: opacity 0.8s ease, visibility 0.6s ease;
     opacity: 0;
     visibility: hidden;
 }
-
+.mobile-menu.open {
+    display: flex; /* Show the menu when open */
+}
 /* Show menu when active */
 .mobile-menu.active {
     display: flex;
@@ -282,3 +292,15 @@ tbody tr:nth-child(odd) {
     background-color: #fff;
 }
 
+
+
+#members-section{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj1_AIcKxW4pMSO_-TyALzPOLqef7UAc0lgg&s');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    min-height: 300px;
+    color: white;
+
+}
