@@ -16,7 +16,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -43,6 +43,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="#rent-section" class="nav-link text-white">Rent Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#advance-list-section" class="nav-link text-white">Advance List</a>
                     </li>
                     <li class="nav-item">
                         <a href="member.html" class="nav-link text-white">Members</a>
@@ -76,6 +79,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="#rent-section" class="nav-link text-white">Rent Details</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#advance-list-section" class="nav-link text-white">Advance List</a>
                 </li>
                 <li class="nav-item">
                     <a href="member.html" class="nav-link text-white">Members</a>
@@ -175,9 +181,9 @@
         style="height: 95vh;">
         <div class="background-blur"></div>
         <div class="container position-relative">
-            <h2 class="display-5">Welcome to the <strong>Bachelor Zone</strong></h2>
+            <h2 class="display-5"><span class="text-warning">Welcome</span> to the <strong class="text-info">Bachelor Zone</strong></h2>
             <p class="lead">Rent details, Members, and Payment info</p>
-            <a href="#rent-section" class="btn btn-light mt-3">Learn More</a>
+            <a href="#about" class="btn btn-light mt-3">Learn More</a>
         </div>
     </section>
 
@@ -355,6 +361,117 @@
 
 
 
+    <!-- Advance List Section -->
+    <section id="advance-list-section" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Details of Advance & SC List</h2>
+
+            <!-- Search Input -->
+            <input type="text" id="searchInput" class="form-control mb-4" placeholder="Search by Member Name...">
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead class="table-info">
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Advance</th>
+                            <th>Advance Due's</th>
+                            <th>Service Charge</th>
+                            <th>SC Due's</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AJ Srabon</td>
+                            <td>2000</td>
+                            <td>400</td>
+                            <td>1000</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Sizar</td>
+                            <td>2000</td>
+                            <td>500</td>
+                            <td>1000</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Tanvir</td>
+                            <td>2000</td>
+                            <td>400</td>
+                            <td>1000</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Asif</td>
+                            <td>2000</td>
+                            <td>Paid</td>
+                            <td>1000</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Ucchas</td>
+                            <td>2000</td>
+                            <td>500</td>
+                            <td>1000</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Sabbir Vai</td>
+                            <td>2100</td>
+                            <td>Paid</td>
+                            <td>1000</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Tafsir</td>
+                            <td>2100</td>
+                            <td>Not Paid</td>
+                            <td>1000</td>
+                            <td>Not Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Sahriar</td>
+                            <td>2100</td>
+                            <td>Paid</td>
+                            <td>1000</td>
+                            <td>Not Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Tuhin</td>
+                            <td>2100</td>
+                            <td>Paid</td>
+                            <td>800</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Tahmid</td>
+                            <td>2100</td>
+                            <td>Paid</td>
+                            <td>500</td>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <td>Rafi</td>
+                            <td>2100</td>
+                            <td>Paid</td>
+                            <td>1000</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Rifat</td>
+                            <td>2100</td>
+                            <td>Paid</td>
+                            <td>1000</td>
+                            <td>Paid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <!-- Payment Section -->
     <section id="payment-section"
         class="payment-section text-center text-white d-flex align-items-center justify-content-center position-relative"
@@ -471,8 +588,10 @@
 
 
 
-    <footer class="bg-primary text-white py-4">
+    <footer class="footer text-black py-4">
         <div class="container text-center">
+            <br>
+            <br>
             <p class="mb-0">© 2025 Bachelor Zone. All Rights Reserved.</p>
         </div>
     </footer>
