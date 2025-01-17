@@ -185,18 +185,21 @@
                     Zone</strong></h2>
             <p class="lead">Rent details, Members, and Payment info</p>
             <button class="learn-more">
-              <span class="circle" aria-hidden="true">
-              <span class="icon arrow"></span>
-              </span>
-              <span class="button-text"><a href="#about" class="text-white" style="text-decoration: none;">Learn More</a></span>
-            </button>        </div>
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text"><a href="#about" class="text-white" style="text-decoration: none;">Learn
+                        More</a></span>
+            </button>
+        </div>
     </section>
 
 
     <!-- About Section -->
     <section id="about" class="about py-5 mb-2">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
-        crossorigin="anonymous"></script>
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
+            crossorigin="anonymous"></script>
         <div class="container">
             <div class="row align-items-center">
                 <!-- Text Column -->
@@ -247,8 +250,9 @@
 
     <!-- Rent Details Section -->
     <section id="rent-section" class="rent-section py-5">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
-        crossorigin="anonymous"></script>
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
+            crossorigin="anonymous"></script>
         <div class="container">
             <h3 class="text-center mb-4 text-white">Rent Details</h3>
             <div class="text-center">
@@ -486,7 +490,10 @@
         <div class="container">
             <h2 class="text-center mb-4">Our Location</h2>
             <div class="map-responsive">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1767.0972415117546!2d90.41116990597591!3d23.760131510920136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s3%20no%20guli%2C%20modhubag%2C%20hatirjheel!5e0!3m2!1sen!2sbd!4v1737112561698!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1767.0972415117546!2d90.41116990597591!3d23.760131510920136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s3%20no%20guli%2C%20modhubag%2C%20hatirjheel!5e0!3m2!1sen!2sbd!4v1737112561698!5m2!1sen!2sbd"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -495,8 +502,9 @@
     <section id="payment-section"
         class="payment-section text-center text-white d-flex align-items-center justify-content-center position-relative"
         style="height: 75vh;">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
-        crossorigin="anonymous"></script>
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
+            crossorigin="anonymous"></script>
         <div class="background-blur"></div>
         <div class="container">
             <h3 class="text-center mb-4">Payment</h3>
@@ -510,7 +518,26 @@
                     Click on Method
                 </button>
             </div>
-
+            <!-- Payment Rules Option -->
+            <div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="rulesModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="rulesModalLabel">Payment Rules</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <!-- Add the rules image here -->
+                            <img src="assets/images/rules.jpg" alt="Payment Rules" class="img-fluid" />
+                            <!-- Instructions if needed -->
+                            <p class="mt-3">Please read the rules carefully before proceeding with payment.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Modal for Payment Methods -->
             <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel"
                 aria-hidden="true">
@@ -537,7 +564,14 @@
                                         target="_blank" class="btn btn-warning text-white w-100">
                                         Pay with Nagad
                                     </a>
+                                    
                                 </div>
+                                <hr>
+                                <br>
+                                <hr>
+                                <button type="button" class="btn btn-outline-light text-black" data-bs-toggle="modal" data-bs-target="#rulesModal">
+                                    View Payment Rules
+                                </button>
                             </div>
                         </div>
                         <div class="modal-footer">
