@@ -260,7 +260,6 @@
     <script>
         // Function to handle human verification
         document.getElementById("verifyButton").addEventListener("click", function () {
-            // Array of questions and answers
             const questions = [
                 { question: "What is 5 + 3?", answer: "8" },
                 { question: "What is 10 - 6?", answer: "4" },
@@ -276,13 +275,11 @@
             const randomIndex = Math.floor(Math.random() * questions.length);
             const selectedQuestion = questions[randomIndex];
 
-            // Prompt the user with the selected question
             const verification = prompt(selectedQuestion.question);
 
-            // Check the answer (case-insensitive)
             if (verification && verification.trim().toLowerCase() === selectedQuestion.answer.toLowerCase()) {
                 alert("Verification successful! Redirecting...");
-                window.location.href = "member.html"; // Redirect to member.html
+                window.location.href = "member.html"; 
             } else {
                 alert("Verification failed. Please try again.");
             }
