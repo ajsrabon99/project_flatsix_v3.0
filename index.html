@@ -48,7 +48,7 @@
                         <a href="#advance-list-section" class="nav-link text-white">Advance List</a>
                     </li>
                     <li class="nav-item">
-                        <a href="member.html" class="nav-link text-white">Members</a>
+                        <a href="#members-section" class="nav-link text-white">Members</a>
                     </li>
                     <li class="nav-item">
                         <a href="#payment-section" class="nav-link text-white">Payment</a>
@@ -246,7 +246,48 @@
     </section>
 
 
+    <!-- Members Section -->
+    <section id="members-section" class="py-5"
+        style="background-image: url('https://static.vecteezy.com/system/resources/previews/003/462/493/non_2x/abstract-futuristic-face-concept-artificial-intelligence-background-free-vector.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white;">
+        <div class="container text-center">
+            <h2 class="mb-4">Our Members</h2>
+            <button id="verifyButton" class="btn btn-outline-light mb-4">
+                <strong>>> See All Members <<</strong>
+            </button>
+        </div>
+    </section>
 
+    <script>
+        // Function to handle human verification
+        document.getElementById("verifyButton").addEventListener("click", function () {
+            // Array of questions and answers
+            const questions = [
+                { question: "What is 5 + 3?", answer: "8" },
+                { question: "What is 10 - 6?", answer: "4" },
+                { question: "What is 2 * 5?", answer: "10" },
+                { question: "What is 12 / 4?", answer: "3" },
+                { question: "What is the capital of France?", answer: "Paris" },
+                { question: "What color is the sky on a clear day?", answer: "blue" },
+                { question: "Spell the word 'apple' backwards.", answer: "elppa" },
+                { question: "What is 15 % 4 (remainder)?", answer: "3" },
+            ];
+
+            // Pick a random question
+            const randomIndex = Math.floor(Math.random() * questions.length);
+            const selectedQuestion = questions[randomIndex];
+
+            // Prompt the user with the selected question
+            const verification = prompt(selectedQuestion.question);
+
+            // Check the answer (case-insensitive)
+            if (verification && verification.trim().toLowerCase() === selectedQuestion.answer.toLowerCase()) {
+                alert("Verification successful! Redirecting...");
+                window.location.href = "member.html"; // Redirect to member.html
+            } else {
+                alert("Verification failed. Please try again.");
+            }
+        });
+    </script>
 
     <!-- Rent Details Section -->
     <section id="rent-section" class="rent-section py-5">
@@ -564,12 +605,13 @@
                                         target="_blank" class="btn btn-warning text-white w-100">
                                         Pay with Nagad
                                     </a>
-                                    
+
                                 </div>
                                 <hr>
                                 <br>
                                 <hr>
-                                <button type="button" class="btn btn-outline-light text-black" data-bs-toggle="modal" data-bs-target="#rulesModal">
+                                <button type="button" class="btn btn-outline-light text-black" data-bs-toggle="modal"
+                                    data-bs-target="#rulesModal">
                                     View Payment Rules
                                 </button>
                             </div>
