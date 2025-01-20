@@ -47,34 +47,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-
-const express = require("express");
-const axios = require("axios");
-const app = express();
-
-app.use(express.json());
-
-// Endpoint to verify CAPTCHA token
-app.post("/verify-captcha", async (req, res) => {
-    const { token } = req.body;
-
-    try {
-        const response = await axios.post("https://challenges.cloudflare.com/turnstile/v0/siteverify", null, {
-            params: {
-                secret: "0x4AAAAAAA5zDt036kRqtMr95QmGgBVwfXQ",
-                response: token,
-            },
-        });
-
-        if (response.data.success) {
-            res.json({ success: true });
-        } else {
-            res.status(400).json({ success: false, message: "CAPTCHA verification failed." });
-        }
-    } catch (error) {
-        res.status(500).json({ success: false, message: "Server error." });
-    }
-});
-
-app.listen(3000, () => console.log("Server running on port 3000"));
