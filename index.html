@@ -255,7 +255,6 @@
     </section>
 
 
-    <!-- Members Section -->
     <section id="members-section" class="py-5"
         style="background-image: url('https://static.vecteezy.com/system/resources/previews/003/462/493/non_2x/abstract-futuristic-face-concept-artificial-intelligence-background-free-vector.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white;">
         <div class="container text-center">
@@ -269,12 +268,9 @@
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
-            <button class="btn btn-outline-light mb-4"><a href="member.html" style="text-decoration: none"><strong> See All Members </strong></a></button>
+            <button id="verifyButton" class="btn btn-outline-light mb-4">Verify to See All Members</button>
         </div>
     </section>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
-        crossorigin="anonymous"></script>
     <script>
         // Function to handle human verification
         document.getElementById("verifyButton").addEventListener("click", function () {
@@ -286,21 +282,23 @@
                 { question: "How many days are there in a week?", answer: "7" },
                 { question: "What is the capital of the United Kingdom?", answer: "London" },
             ];
-
+    
             // Pick a random question
             const randomIndex = Math.floor(Math.random() * questions.length);
             const selectedQuestion = questions[randomIndex];
-
+    
             const verification = prompt(selectedQuestion.question);
-
+    
             if (verification && verification.trim().toLowerCase() === selectedQuestion.answer.toLowerCase()) {
                 alert("Verification successful! Redirecting...");
-                window.location.href = "member.html";
+                window.location.href = "member.html"; 
             } else {
                 alert("Verification failed. Please try again.");
             }
         });
     </script>
+    
+
 
     <!-- Rent Details Section -->
     <section id="rent-section" class="rent-section py-5">
