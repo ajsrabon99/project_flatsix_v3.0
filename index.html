@@ -21,27 +21,6 @@
 </head>
 
 <body>
-    <!-- CAPTCHA Container -->
-    <div id="captcha-container" style="text-align: center; margin: 20px;">
-        <h3>Verify You're Human to Proceed</h3>
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAAA5zDiwQDQWVPZNi" data-callback="verifyCaptcha"></div>
-        <button id="proceedButton" style="display: none;" class="btn btn-primary">Proceed</button>
-    </div>
-
-    <script>
-        // Proceed Button Logic
-        const proceedButton = document.getElementById("proceedButton");
-
-        // Callback for CAPTCHA success
-        function verifyCaptcha(token) {
-            alert("CAPTCHA verified! Redirecting...");
-            proceedButton.style.display = "block"; // Show Proceed Button
-            proceedButton.addEventListener("click", () => {
-                window.location.href = "https://bachelor-zone-v3.netlify.app"; // Redirect to your link
-            });
-        }
-    </script>
-
     <!-- Header -->
     <header class="Header text-white py-3 position-relative">
         <div class="container d-flex align-items-center justify-content-between">

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cloudflare</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+</head>
+<body>
+    <!-- CAPTCHA Container -->
+    <div id="captcha-container" style="text-align: center; margin: 20px;">
+        <h3>Verify You're Human to Proceed</h3>
+        <div class="cf-turnstile" 
+             data-sitekey="0x4AAAAAAA5zDiwQDQWVPZNi" 
+             data-callback="verifyCaptcha"></div>
+        <button id="proceedButton" style="display: none;" class="btn btn-primary">Proceed</button>
+    </div>
+
+    <script>
+        // Proceed Button Logic
+        const proceedButton = document.getElementById("proceedButton");
+
+        // Callback for CAPTCHA success
+        function verifyCaptcha(token) {
+            alert("CAPTCHA verified! Redirecting...");
+            proceedButton.style.display = "block"; // Show Proceed Button
+            proceedButton.addEventListener("click", () => {
+                window.location.href = "https://bachelor-zone-v3.netlify.app"; // Redirect to your link
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
