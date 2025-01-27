@@ -264,7 +264,7 @@
 
 .contact-info .icon {
     font-size: 24px;
-    color: #3498db;
+    color: #f28417;
     margin-right: 10px;
 }
 
@@ -273,13 +273,13 @@
     margin-top: 5px;
 }
 
-.social-icons {
+.social-icon {
     margin-top: 15px;
 }
 
-.social-icons a {
+.social-icon a {
     margin: 0 10px;
-    color: #3498db;
+    color: #f28417;
     font-size: 24px;
 }
 
@@ -305,14 +305,14 @@
     padding: 10px;
     font-size: 18px;
     color: #fff;
-    background: linear-gradient(to right, #1abc9c, #16a085);
+    background: linear-gradient(to right, #f28417, #f5a85b);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .contact-form button:hover {
-    background: linear-gradient(to right, #38ced6, #00fcc9);
+    background: linear-gradient(to right, #f5a85b, #f28417);
 }
 
 
@@ -365,14 +365,112 @@ tbody tr:nth-child(odd) {
 
 }
 
-.footer{
-    background-image: url('https://img.freepik.com/free-vector/v915_53876-174949.jpg');
+/* Footer Section */
+.footer {
+    background-image: url('https://t3.ftcdn.net/jpg/05/00/76/76/360_F_500767676_mZzz2hyDsFsiZksszm6dSfgHX6cI3M9T.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     overflow: hidden;
     min-height: 150px;
-    color: black;
+    color: rgb(255, 255, 255);
+    padding: 4rem 1rem;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #f28417;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.footer-column ul li i {
+    margin-right: 0.5rem;
+    color: #f28417;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    color: #f28417;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #cf751b;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    background-color: #f28417;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #b76e24;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 1rem;
+    border-top: 1px solid #f28417;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-top: 0.3rem;
 }
 
 /* From Uiverse.io by cssbuttons-io */ 

@@ -67,3 +67,47 @@
         padding: 5px;
     }
 }
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-columns {
+        grid-template-columns: 1fr; /* One column for smaller screens */
+        gap: 1.5rem; /* Reduce the gap for compact layout */
+    }
+    .footer {
+        padding: 2rem 1rem; /* Reduce padding on mobile */
+    }
+    .footer-column h3 {
+        font-size: 1.25rem; /* Smaller headings for mobile */
+    }
+    .footer-column ul li {
+        font-size: 0.9rem; /* Adjust font size for better readability */
+    }
+    .social-icons a {
+        font-size: 1rem; /* Scale down social icons */
+        margin-right: 0.75rem;
+    }
+    .newsletter-form input, 
+    .newsletter-form button {
+        padding: 0.5rem; /* Adjust input and button size */
+        font-size: 0.9rem;
+    }
+}
+
+/* Very Small Screens (Optional) */
+@media (max-width: 480px) {
+    .footer-column h3 {
+        font-size: 1.1rem; /* Further reduce heading size */
+    }
+    .footer-column ul li {
+        font-size: 0.8rem; /* Reduce list item size */
+    }
+    .newsletter-form input, 
+    .newsletter-form button {
+        font-size: 0.8rem; /* Adjust form elements */
+    }
+    .footer-bottom p {
+        font-size: 1rem; /* Smaller footer text */
+    }
+}
