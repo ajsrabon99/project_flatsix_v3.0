@@ -458,7 +458,16 @@ tbody tr:nth-child(odd) {
 .newsletter-form button:hover {
     background-color: #b76e24;
 }
-
+.newsletter-form button i{
+    margin: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: larger;
+}
+.newsletter-form button a {
+    text-decoration: none;
+    color: white;
+}
 /* Footer Bottom */
 .footer-bottom {
     margin-top: 1rem;
