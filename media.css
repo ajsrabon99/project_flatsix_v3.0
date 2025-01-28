@@ -72,25 +72,25 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .footer-columns {
-        grid-template-columns: 1fr; /* One column for smaller screens */
-        gap: 1.5rem; /* Reduce the gap for compact layout */
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
     }
     .footer {
-        padding: 2rem 1rem; /* Reduce padding on mobile */
+        padding: 2rem 1rem; 
     }
     .footer-column h3 {
-        font-size: 1.25rem; /* Smaller headings for mobile */
+        font-size: 1.25rem; 
     }
     .footer-column ul li {
-        font-size: 0.9rem; /* Adjust font size for better readability */
+        font-size: 0.9rem;
     }
     .social-icons a {
-        font-size: 1rem; /* Scale down social icons */
+        font-size: 1rem;
         margin-right: 0.75rem;
     }
     .newsletter-form input, 
     .newsletter-form button {
-        padding: 0.5rem; /* Adjust input and button size */
+        padding: 0.5rem;
         font-size: 0.9rem;
     }
 }
@@ -98,16 +98,39 @@
 /* Very Small Screens (Optional) */
 @media (max-width: 480px) {
     .footer-column h3 {
-        font-size: 1.1rem; /* Further reduce heading size */
+        font-size: 1.1rem;
     }
     .footer-column ul li {
-        font-size: 0.8rem; /* Reduce list item size */
+        font-size: 0.8rem; 
     }
     .newsletter-form input, 
     .newsletter-form button {
-        font-size: 0.8rem; /* Adjust form elements */
+        font-size: 0.8rem; 
     }
     .footer-bottom p {
-        font-size: 1rem; /* Smaller footer text */
+        font-size: 1rem; 
+    }
+}
+
+
+
+/* Gallery Responsive Design */
+@media (max-width: 768px) {
+    #gallery-section .section-title {
+        font-size: 1.8rem;
+    }
+
+    .gallery-grid {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #gallery-section .section-title {
+        font-size: 1.5rem;
+    }
+
+    .gallery-item img {
+        border-radius: 5px;
     }
 }
