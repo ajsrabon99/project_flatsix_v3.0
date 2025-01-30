@@ -749,18 +749,39 @@
 
     <script>
         const toggleTableBtn = document.getElementById('toggleTableBtn');
-        const rentTable = document.getElementById('rentTable');
-
+        const rentTable = document.getElementById('rentTable, members-container');
+        let isVerified = false; // Track verification status
+    
         toggleTableBtn.addEventListener('click', function () {
             if (rentTable.style.display === 'none') {
-                rentTable.style.display = 'block';
-                toggleTableBtn.textContent = 'Hide Rent Details';
+                if (!isVerified) {
+                    let isMember = confirm("Are you a member of this flat?\nIf the answer is YES, then click on OK, and if the answer is NO, then click on Cancel.");
+                    if (!isMember) {
+                        alert("Rent details show only flat members.");
+                        window.location.href = "#hero"; // Redirect to hero section
+                        return;
+                    }
+    
+                    let answer = prompt("Fill in the gaps. Farhan Sahriar ______.");
+                    if (answer && answer.trim().toLowerCase() === "sizar") {
+                        isVerified = true; // Mark as verified
+                        rentTable.style.display = 'block';
+                        toggleTableBtn.textContent = 'Hide Rent Details';
+                    } else {
+                        alert("Verification failed. Redirecting...");
+                        window.location.href = "#hero"; // Redirect to hero section
+                    }
+                } else {
+                    rentTable.style.display = 'block';
+                    toggleTableBtn.textContent = 'Hide Rent Details';
+                }
             } else {
                 rentTable.style.display = 'none';
                 toggleTableBtn.textContent = 'Show Rent Details';
             }
         });
     </script>
+    
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYZSWST9TK"></script>
