@@ -25,11 +25,16 @@
     background-position: center center;
     background-size: cover;
     overflow: hidden;
-    position: fixed; /* Fix the header to the top */
-    top: 0; /* Position it at the top of the viewport */
-    width: 100%; /* Make the header span the full width */
-    z-index: 1000; /* Ensure it stays above other content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better visibility */
+    position: fixed;
+    /* Fix the header to the top */
+    top: 0;
+    /* Position it at the top of the viewport */
+    width: 100%;
+    /* Make the header span the full width */
+    z-index: 1000;
+    /* Ensure it stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Optional: Add a shadow for better visibility */
 
 }
 
@@ -56,7 +61,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    overflow: hidden;        
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -174,7 +179,7 @@
 #advance-list-section h2 {
     font-size: 28px;
     font-weight: bold;
-    color: #343a40; 
+    color: #343a40;
     margin-bottom: 20px;
 }
 
@@ -183,25 +188,28 @@
     border-collapse: collapse;
 }
 
-.table th, .table td {
+.table th,
+.table td {
     padding: 12px;
     text-align: center;
     border: 1px solid #dee2e6;
 }
 
 .table thead {
-    background-color: #343a40; 
-    color: #ffffff; 
+    background-color: #343a40;
+    color: #ffffff;
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #f2f2f2; 
+    background-color: #f2f2f2;
 }
+
+
 
 
 .map-responsive {
     position: relative;
-    padding-bottom: 30.25%; 
+    padding-bottom: 30.25%;
     height: 0;
     overflow: hidden;
 }
@@ -358,7 +366,7 @@ tbody tr:nth-child(odd) {
 
 
 
-#members-section{
+#members-section {
     background-image: url('https://wallpapers.com/images/featured/dark-blue-1u6lldkvi9buf4rl.jpg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -506,16 +514,19 @@ tbody tr:nth-child(odd) {
 .newsletter-form button:hover {
     background-color: #b76e24;
 }
-.newsletter-form button i{
+
+.newsletter-form button i {
     margin: 0 10px;
     color: #ffffff;
     text-decoration: none;
     font-size: larger;
 }
+
 .newsletter-form button a {
     text-decoration: none;
     color: white;
 }
+
 /* Footer Bottom */
 .footer-bottom {
     margin-top: 1rem;
@@ -530,7 +541,7 @@ tbody tr:nth-child(odd) {
     margin-top: 0.3rem;
 }
 
-/* From Uiverse.io by cssbuttons-io */ 
+/* From Uiverse.io by cssbuttons-io */
 button {
     position: relative;
     display: inline-block;
@@ -543,14 +554,14 @@ button {
     padding: 0;
     font-size: inherit;
     font-family: inherit;
-   }
-   
-   button.learn-more {
+}
+
+button.learn-more {
     width: 12rem;
     height: auto;
-   }
-   
-   button.learn-more .circle {
+}
+
+button.learn-more .circle {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: relative;
     display: block;
@@ -559,26 +570,26 @@ button {
     height: 3rem;
     background: #ffd000;
     border-radius: 1.625rem;
-   }
-   
-   button.learn-more .circle .icon {
+}
+
+button.learn-more .circle .icon {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
     top: 0;
     bottom: 0;
     margin: auto;
     background: #fff;
-   }
-   
-   button.learn-more .circle .icon.arrow {
+}
+
+button.learn-more .circle .icon.arrow {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     left: 0.625rem;
     width: 1.125rem;
     height: 0.125rem;
     background: none;
-   }
-   
-   button.learn-more .circle .icon.arrow::before {
+}
+
+button.learn-more .circle .icon.arrow::before {
     position: absolute;
     content: "";
     top: -0.29rem;
@@ -588,9 +599,9 @@ button {
     border-top: 0.125rem solid #fff;
     border-right: 0.125rem solid #fff;
     transform: rotate(45deg);
-   }
-   
-   button.learn-more .button-text {
+}
+
+button.learn-more .button-text {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
     top: 0;
@@ -604,17 +615,17 @@ button {
     line-height: 1.6;
     text-align: center;
     text-transform: uppercase;
-   }
-   
-   button:hover .circle {
+}
+
+button:hover .circle {
     width: 100%;
-   }
-   
-   button:hover .circle .icon.arrow {
+}
+
+button:hover .circle .icon.arrow {
     background: #fff;
     transform: translate(1rem, 0);
-   }
-   
-   button:hover .button-text {
+}
+
+button:hover .button-text {
     color: #fff;
-   }
+}
