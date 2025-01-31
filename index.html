@@ -750,8 +750,13 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             if (!sessionStorage.getItem("verified")) { // Check if already verified
-                let isMember = confirm("Are you a member of this flat?\nIf the answer is YES, then click on OK, and if the answer is NO, then click on Cancel.");
-
+                let isMember = confirm("Are you a member of this flat?\nIf YES, click OK. If NO, click Cancel.");
+    
+                if (!isMember) {
+                    window.location.href = "Cancel_form.html"; // Redirect to Cancel_form.html
+                    return;
+                }
+    
                 let answer = prompt("Fill in the gaps: Farhan Sahriar ______.");
                 if (answer && answer.trim().toLowerCase() === "sizar") {
                     sessionStorage.setItem("verified", "true"); // Store verification status
@@ -762,6 +767,7 @@
             }
         });
     </script>
+    
 
 
 
