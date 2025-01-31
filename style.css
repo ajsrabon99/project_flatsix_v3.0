@@ -142,7 +142,11 @@
 
 .rent-section {
     padding: 2rem 0;
-    background-image: url('data:image/jpeg;base64,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');
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/797/548/47/strip-texture-dark-blue-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
 }
 
 #rent-section {
@@ -355,7 +359,7 @@ tbody tr:nth-child(odd) {
 
 
 #members-section{
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj1_AIcKxW4pMSO_-TyALzPOLqef7UAc0lgg&s');
+    background-image: url('https://wallpapers.com/images/featured/dark-blue-1u6lldkvi9buf4rl.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
