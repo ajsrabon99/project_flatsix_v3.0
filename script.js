@@ -18,7 +18,16 @@ navLinks.forEach((link) => {
     });
 });
 
-
+//hero
+document.addEventListener("DOMContentLoaded", function () {
+    const heroText = document.querySelector(".fade-in");
+    const heroText2 = document.querySelector(".fade-in.delay");
+    
+    setTimeout(() => {
+        heroText.style.opacity = "1";
+        heroText2.style.opacity = "1";
+    }, 500);
+});
 
 
 // Attach click event to payment options
@@ -48,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+//Calendar
 document.addEventListener('DOMContentLoaded', function () {
     const datesContainer = document.getElementById('dates');
     const year = 2025;
@@ -70,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const date = new Date(year, month, day);
         const isToday = date.toDateString() === today.toDateString();
         datesHTML += `
-            <div class="col p-2 ${isToday ? 'bg-primary text-white rounded' : ''}">
+            <div class="col p-2 ${isToday ? 'bg-warning text-white rounded' : ''}">
                 ${day}
             </div>
         `;

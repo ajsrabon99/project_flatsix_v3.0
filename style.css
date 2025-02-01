@@ -1,8 +1,16 @@
+body{
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190628/ourmid/pngtree-fluid-gradation-6th-anniversary-celebration-advertising-background-image_271687.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Hero Section Background */
 .hero-section {
     background: url('assets/images/banner.jpg') no-repeat center center/cover;
     overflow: hidden;
+    position: relative;
 }
 
+/* Background Blur Effect */
 .hero-section .background-blur {
     position: absolute;
     top: 0;
@@ -10,14 +18,60 @@
     width: 100%;
     height: 100%;
     background: inherit;
-    filter: blur(5px);
+    filter: blur(8px);
+    opacity: 0.8;
     z-index: 1;
 }
 
+/* Floating Background Animation */
+.floating-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 6s infinite alternate ease-in-out;
+    z-index: 1;
+}
+
+/* Floating Animation */
+@keyframes float {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
+
+/* Content Animation */
 .hero-section .container {
     z-index: 2;
     position: relative;
+    text-align: center;
 }
+
+/* Fade-In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards ease-in-out;
+}
+
+.delay {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .Header {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgT7fAQvPhaLGu3CQSrY3ob1I8-it3zaBPQA&s');

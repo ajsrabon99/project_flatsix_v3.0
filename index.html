@@ -84,23 +84,28 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero"
-        class="hero-section text-center text-white d-flex align-items-center justify-content-center position-relative"
-        style="height: 95vh;">
-        <div class="background-blur"></div>
-        <div class="container position-relative">
-            <h2 class="display-5"><span class="text-warning">Welcome</span> to the <strong class="text-info">Bachelor
-                    Zone</strong></h2>
-            <p class="lead">Rent details, Members, and Payment info</p>
-            <button class="learn-more">
-                <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
-                </span>
-                <span class="button-text"><a href="#about" class="text-white" style="text-decoration: none;">Learn
-                        More</a></span>
-            </button>
-        </div>
-    </section>
+<section id="hero"
+    class="hero-section text-center text-white d-flex align-items-center justify-content-center position-relative"
+    style="height: 95vh;">
+    <div class="background-blur"></div>
+    <div class="floating-background"></div>
+    
+    <div class="container position-relative">
+        <h2 class="display-5 fade-in">
+            <span class="text-warning">Welcome</span> to the <strong class="text-info">Bachelor Zone</strong>
+        </h2>
+        <p class="lead fade-in delay">Rent details, Members, and Payment info</p>
+
+        <button class="learn-more glow-effect">
+            <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">
+                <a href="#about" class="text-white" style="text-decoration: none;">Learn More</a>
+            </span>
+        </button>
+    </div>
+</section>
 
 
     <!-- About Section -->
@@ -206,6 +211,96 @@
         });
     </script>
 
+<section class="container my-5">
+    <h1 class="text-center mb-4 text-white">Details of Room</h1>
+    
+    <div class="accordion" id="rentAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Bed Room 1 <span class="icon ms-2">▼</span>
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#rentAccordion">
+                <div class="accordion-body">
+                    Rent per seat: <strong>2400tk</strong> (Without others Bill)
+                </div>
+                <div class="accordion-body">
+                    <p>2 window, 1 balcony, 3 seats (filled), and washroom.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Bed Room 2 <span class="icon ms-2">▼</span>
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#rentAccordion">
+                <div class="accordion-body">
+                    Rent per seat: <strong>2500tk</strong> (Without others Bill)
+                </div>
+                <div class="accordion-body">
+                    <p>1 window, 1 balcony, 2 seats (filled), and the washroom is outside, adjacent to the dining room.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Dining Room <span class="icon ms-2">▼</span>
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#rentAccordion">
+                <div class="accordion-body">
+                    Rent per seat: <strong>2100tk</strong> (Without others Bill)
+                </div>
+                <div class="accordion-body">
+                    <p>1 window, 4 seats (filled), and washroom.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .accordion-button {
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .accordion-button:focus {
+        box-shadow: none;
+    }
+
+    .accordion-button .icon {
+        transition: transform 0.3s ease;
+    }
+
+    .accordion-button[aria-expanded="true"] .icon {
+        transform: rotate(180deg);
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.accordion-button').forEach(button => {
+        button.addEventListener('click', function () {
+            let icon = this.querySelector('.icon');
+            document.querySelectorAll('.icon').forEach(i => {
+                if (i !== icon) i.style.transform = "rotate(0deg)";
+            });
+        });
+    });
+</script>
 
 
     <!-- Rent Details Section -->
@@ -463,11 +558,11 @@
 
     <section class="container my-5">
         <div class="card shadow">
-            <div class="card-header bg-primary text-white text-center">
+            <div class="card-header bg-warning text-white text-center">
                 <h1 class="card-title mb-0">February 2025</h1>
             </div>
             <div class="card-body"
-                style="background-image: url('https://wallpapers.com/images/featured/dark-blue-1u6lldkvi9buf4rl.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white;">
+                style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/001/882/512/small/hand-drawn-abstract-background-free-vector.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white;">
                 <div class="row row-cols-7 g-2 text-center fw-bold">
                     <div class="col">Sun</div>
                     <div class="col">Mon</div>
