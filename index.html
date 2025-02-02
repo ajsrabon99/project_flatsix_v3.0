@@ -327,7 +327,7 @@
             <br>
             <div class="g-recaptcha" data-sitekey="6Lfu7ckqAAAAAMt4qwqQV_DWjaosaZiDggLcy3_T"></div>
             <br> <br>
-            <p class="text-center text-warning">👆1st Verify (Refresh page)👆</p>
+            <p class="text-center text-warning">👆 Please verify first (If Google verification does not appear, refresh the page) 👆</p>
             <div class="text-center">
                 <button id="toggleTableBtn" class="btn btn-outline-light mb-4">>>Show Rent Details<< </button>
             </div>
@@ -888,19 +888,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        const toggleTableBtn = document.getElementById('toggleTableBtn');
-        const rentTable = document.getElementById('rentTable');
-
-        toggleTableBtn.addEventListener('click', function () {
-            if (rentTable.style.display === 'none' || rentTable.style.display === '') {
-                rentTable.style.display = 'block';
-                toggleTableBtn.textContent = 'Hide Rent Details';
-            } else {
-                rentTable.style.display = 'none';
-                toggleTableBtn.textContent = 'Show Rent Details';
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleTableBtn = document.getElementById('toggleTableBtn');
+            const rentTable = document.getElementById('rentTable');
+            const verifyMessage = document.getElementById('verifyMessage');
+    
+            toggleTableBtn.addEventListener('click', function () {
+                const response = grecaptcha.getResponse(); // Get reCAPTCHA response
+    
+                if (!response) {
+                    // If not verified, show message
+                    alert("⚠️ Please complete the verification first!\n\n👉 If Google verification is not showing, refresh the page.");
+                    return;
+                }
+    
+                // If verified, remove message and toggle table
+                verifyMessage.style.display = 'none';
+    
+                if (rentTable.style.display === 'none' || rentTable.style.display === '') {
+                    rentTable.style.display = 'block';
+                    toggleTableBtn.textContent = 'Hide Rent Details';
+                } else {
+                    rentTable.style.display = 'none';
+                    toggleTableBtn.textContent = 'Show Rent Details';
+                }
+            });
         });
-
     </script>
 
 
