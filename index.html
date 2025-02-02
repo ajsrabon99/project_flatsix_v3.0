@@ -20,6 +20,13 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
     </script>
+    <!-- AOS (Animate On Scroll) Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- Lightbox Library for Fullscreen Image -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </head>
 
 <body>
@@ -626,32 +633,47 @@
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 
-    <!-- Gallery Section  -->
-    <section id="gallery-section" class="gallery py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="image1.jpg" alt="Gallery Image 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="image2.jpg" alt="Gallery Image 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="image3.jpg" alt="Gallery Image 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="image4.jpg" alt="Gallery Image 4">
-                </div>
-                <div class="gallery-item">
-                    <img src="image5.jpg" alt="Gallery Image 5">
-                </div>
-                <div class="gallery-item">
-                    <img src="image6.jpg" alt="Gallery Image 6">
-                </div>
+    <!-- Gallery Section -->
+<section id="gallery-section" class="gallery py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="assets/Gallery/image1.jpg" data-lightbox="gallery">
+                    <img src="assets/Gallery/image1.jpg" alt="Gallery Image 1">
+                </a>
+            </div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                <a href="assets/Gallery/image2.jpg" data-lightbox="gallery">
+                    <img src="assets/Gallery/image2.jpg" alt="Gallery Image 2">
+                </a>
+            </div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                <a href="assets/Gallery/image3.jpg" data-lightbox="gallery">
+                    <img src="assets/Gallery/image3.jpg" alt="Gallery Image 3">
+                </a>
+            </div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                <a href="assets/Gallery/image4.jpg" data-lightbox="gallery">
+                    <img src="assets/Gallery/image4.jpg" alt="Gallery Image 4">
+                </a>
+            </div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                <a href="assets/Gallery/image6.jpg" data-lightbox="gallery">
+                    <img src="assets/Gallery/image6.jpg" alt="Gallery Image 6">
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<script>
+    // Initialize AOS animations
+    AOS.init({
+        duration: 800,  // Animation duration
+        once: true      // Animates only once
+    });
+</script>
+
 
     <!-- Payment Section -->
     <section id="payment-section"

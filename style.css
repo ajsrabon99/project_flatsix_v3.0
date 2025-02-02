@@ -435,44 +435,53 @@ tbody tr:nth-child(odd) {
 /* Gallery Section */
 #gallery-section {
     background-color: #f9f9f9;
+    padding: 60px 0;
 }
 
-#gallery-section .section-title {
-    font-size: 2rem;
+/* Title Styling */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
     color: #333;
-    margin-bottom: 2rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* Grid Layout */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    gap: 20px;
 }
 
+/* Gallery Items */
 .gallery-item {
+    position: relative;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* Image Styling */
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 200px;
     display: block;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
+/* Hover Effects */
 .gallery-item:hover img {
     transform: scale(1.1);
 }
 
 .gallery-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
 
 
 /* Footer Section */
