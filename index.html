@@ -919,7 +919,7 @@
             }
 
             toggleTableBtn.addEventListener('click', function () {
-                if (!sessionStorage.getItem("verified")) { // Check if verification is done
+                if (!sessionStorage.getItem("verified")) { 
                     const response = grecaptcha.getResponse(); // Get reCAPTCHA response
 
                     if (!response) {
@@ -935,7 +935,7 @@
                 // Toggle Rent Table
                 if (rentTable.style.display === 'none' || rentTable.style.display === '') {
                     rentTable.style.display = 'block';
-                    toggleTableBtn.textContent = 'Hide Rent Details';
+                    toggleTableBtn.textContent = '👇Hide Rent Details👇';
                 } else {
                     rentTable.style.display = 'none';
                     toggleTableBtn.textContent = 'Show Rent Details';
