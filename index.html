@@ -21,12 +21,12 @@
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
     </script>
     <!-- AOS (Animate On Scroll) Library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-<!-- Lightbox Library for Fullscreen Image -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- Lightbox Library for Fullscreen Image -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </head>
 
 <body>
@@ -342,15 +342,9 @@
             <div class="text-center">
                 <button id="toggleTableBtn" class="btn btn-outline-light mb-4">>>Show Rent Details<< </button>
             </div>
-            <script async
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
-                crossorigin="anonymous"></script>
-            <!-- bachelor zone -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6208705517596475"
-                data-ad-slot="4969372218" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <div class="video-container">
+                <video src="assets/video/refresh.mp4" autoplay muted loop playsinline></video>
+            </div>
             <p class="text-center text-white">Click on <strong>"Show Rent Details"</strong> button to view rent details
             </p>
             <div id="rentTable" class="rent-table" style="display: none;">
@@ -636,45 +630,45 @@
     </script>
 
     <!-- Gallery Section -->
-<section id="gallery-section" class="gallery py-5">
-    <div class="container">
-        <h2 class="section-title text-center mb-5">Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item" data-aos="fade-up">
-                <a href="assets/Gallery/image1.jpg" data-lightbox="gallery">
-                    <img src="assets/Gallery/image1.jpg" alt="Gallery Image 1">
-                </a>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                <a href="assets/Gallery/image2.jpg" data-lightbox="gallery">
-                    <img src="assets/Gallery/image2.jpg" alt="Gallery Image 2">
-                </a>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                <a href="assets/Gallery/image3.jpg" data-lightbox="gallery">
-                    <img src="assets/Gallery/image3.jpg" alt="Gallery Image 3">
-                </a>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-                <a href="assets/Gallery/image4.jpg" data-lightbox="gallery">
-                    <img src="assets/Gallery/image4.jpg" alt="Gallery Image 4">
-                </a>
-            </div>
-            <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
-                <a href="assets/Gallery/image6.jpg" data-lightbox="gallery">
-                    <img src="assets/Gallery/image6.jpg" alt="Gallery Image 6">
-                </a>
+    <section id="gallery-section" class="gallery py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up">
+                    <a href="assets/Gallery/image1.jpg" data-lightbox="gallery">
+                        <img src="assets/Gallery/image1.jpg" alt="Gallery Image 1">
+                    </a>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="assets/Gallery/image2.jpg" data-lightbox="gallery">
+                        <img src="assets/Gallery/image2.jpg" alt="Gallery Image 2">
+                    </a>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="assets/Gallery/image3.jpg" data-lightbox="gallery">
+                        <img src="assets/Gallery/image3.jpg" alt="Gallery Image 3">
+                    </a>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <a href="assets/Gallery/image4.jpg" data-lightbox="gallery">
+                        <img src="assets/Gallery/image4.jpg" alt="Gallery Image 4">
+                    </a>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                    <a href="assets/Gallery/image6.jpg" data-lightbox="gallery">
+                        <img src="assets/Gallery/image6.jpg" alt="Gallery Image 6">
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<script>
-    // Initialize AOS animations
-    AOS.init({
-        duration: 800,  // Animation duration
-        once: true      // Animates only once
-    });
-</script>
+    </section>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,  // Animation duration
+            once: true      // Animates only once
+        });
+    </script>
 
 
     <!-- Payment Section -->
@@ -918,26 +912,26 @@
             const toggleTableBtn = document.getElementById('toggleTableBtn');
             const rentTable = document.getElementById('rentTable');
             const verifyMessage = document.getElementById('verifyMessage');
-    
+
             // Check if user is already verified
             if (sessionStorage.getItem("verified")) {
                 verifyMessage.style.display = 'none'; // Hide verification message
             }
-    
+
             toggleTableBtn.addEventListener('click', function () {
                 if (!sessionStorage.getItem("verified")) { // Check if verification is done
                     const response = grecaptcha.getResponse(); // Get reCAPTCHA response
-    
+
                     if (!response) {
                         alert("⚠️ Please complete the verification first!\n\n👉 If Google verification is not showing, refresh the page.");
                         return;
                     }
-    
+
                     // Store verification status to sessionStorage
                     sessionStorage.setItem("verified", "true");
                     verifyMessage.style.display = 'none'; // Hide message after verification
                 }
-    
+
                 // Toggle Rent Table
                 if (rentTable.style.display === 'none' || rentTable.style.display === '') {
                     rentTable.style.display = 'block';
