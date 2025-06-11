@@ -43,19 +43,18 @@ document.querySelectorAll('.payment-option').forEach(option => {
 
 //advance
 
-document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById("searchInput");
-    const tableRows = document.querySelectorAll("#advance-list-section table tbody tr");
-
-
-    searchInput.addEventListener("input", () => {
+const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('keyup', function () {
         const filter = searchInput.value.toLowerCase();
-        tableRows.forEach(row => {
-            const nameCell = row.cells[0].textContent.toLowerCase();
-            row.style.display = nameCell.includes(filter) ? "" : "none";
+        const rows = document.querySelectorAll('#advance-list-section tbody tr');
+
+        rows.forEach(row => {
+            const name = row.cells[0].textContent.toLowerCase();
+            row.style.display = name.includes(filter) ? '' : 'none';
         });
     });
-});
+
+    
 
 //Calendar
 const datesContainer = document.getElementById("dates");
