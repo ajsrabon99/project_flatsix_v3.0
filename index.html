@@ -330,7 +330,7 @@
             crossorigin="anonymous"></script>
         <div class="container">
             <h3 class="text-center mb-4 text-white">Rent Details</h3>
-            <p class="text-center text-white">Month of<strong> April</strong></p>
+            <p class="text-center text-white">Month of<strong> June</strong></p>
             <br>
             <p class="text-center text-white">Current bill (March) Average per person :- 0 ৳</p>
             <br>
@@ -369,7 +369,7 @@
                                 <td>0</td>
                                 <td>0</td>
                                 <td>2500</td>
-                                <td>Paid</td>
+                                <td>Not Paid</td>
                             </tr>
                             <tr>
                                 <td>Sizar</td>
@@ -387,7 +387,7 @@
                                 <td>0</td>
                                 <td>0</td>
                                 <td>2500</td>
-                                <td>2400</td>
+                                <td>Not Paid</td>
                             </tr>
                             <tr>
                                 <td>Rafi</td>
@@ -396,7 +396,7 @@
                                 <td>0</td>
                                 <td>0</td>
                                 <td>2500</td>
-                                <td>2400</td>
+                                <td>Not Paid</td>
                             </tr>
                             <tr>
                                 <td>Ucchas</td>
@@ -525,7 +525,7 @@
                         <tr>
                             <td>Tafsir</td>
                             <td>2100</td>
-                            <td>Not Paid</td>
+                            <td>Paid</td>
                             <td>1000</td>
                             <td>Not Paid</td>
                         </tr>
@@ -534,7 +534,7 @@
                             <td>2100</td>
                             <td>Paid</td>
                             <td>1000</td>
-                            <td>Not Paid</td>
+                            <td>Paid</td>
                         </tr>
                         <tr>
                             <td>Tuhin</td>
@@ -569,7 +569,7 @@
                             <td>2100</td>
                             <td>Paid</td>
                             <td>1000</td>
-                            <td>Not Paid</td>
+                            <td>500</td>
                         </tr>
                     </tbody>
                 </table>
@@ -578,13 +578,18 @@
     </section>
 
     <section class="container my-5">
-        <div class="card shadow">
-            <div class="card-header bg-warning text-white text-center">
-                <h1 class="card-title mb-0">February 2025</h1>
+        <div class="card shadow-lg border-0" style="border-radius: 1rem; overflow: hidden;">
+            <div class="card-header text-white text-center py-4"
+                style="background: linear-gradient(135deg, #3b8d99, #6b6b83); box-shadow: inset 0 0 10px #00000033;">
+                <h1 class="card-title mb-0 fs-1 fw-bold">June 2025</h1>
             </div>
-            <div class="card-body"
-                style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/001/882/512/small/hand-drawn-abstract-background-free-vector.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white;">
-                <div class="row row-cols-7 g-2 text-center fw-bold">
+            <div class="card-body px-3 py-4" style="
+            background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+            
+            background-blend-mode: overlay;
+            color: #333;
+            box-shadow: inset 0 0 10px #00000011;">
+                <div class="row row-cols-7 g-2 text-center fw-bold text-uppercase text-secondary mb-2">
                     <div class="col">Sun</div>
                     <div class="col">Mon</div>
                     <div class="col">Tue</div>
@@ -593,7 +598,9 @@
                     <div class="col">Fri</div>
                     <div class="col">Sat</div>
                 </div>
-                <div class="row row-cols-7 g-2 text-center" id="dates"></div>
+                <div class="row row-cols-7 g-2 text-center" id="dates">
+                    <!-- Dates will be injected here -->
+                </div>
             </div>
         </div>
     </section>

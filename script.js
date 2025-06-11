@@ -22,7 +22,7 @@ navLinks.forEach((link) => {
 document.addEventListener("DOMContentLoaded", function () {
     const heroText = document.querySelector(".fade-in");
     const heroText2 = document.querySelector(".fade-in.delay");
-    
+
     setTimeout(() => {
         heroText.style.opacity = "1";
         heroText2.style.opacity = "1";
@@ -58,32 +58,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Calendar
-document.addEventListener('DOMContentLoaded', function () {
-    const datesContainer = document.getElementById('dates');
-    const year = 2025;
-    const month = 1; // February (0-based index)
+const datesContainer = document.getElementById("dates");
+const firstDay = new Date(2025, 5, 1).getDay(); // June = month 5 (0-indexed)
+const totalDays = 30;
 
-    const firstDay = new Date(year, month, 1);
-    const lastDay = new Date(year, month + 1, 0);
-    const today = new Date();
+// Highlight today's date (June 11, 2025)
+const today = new Date();
+const isJune2025 = today.getFullYear() === 2025 && today.getMonth() === 5;
+const todayDate = isJune2025 ? today.getDate() : null;
 
-    let datesHTML = '';
-
-    // Fill in the blanks for the first day of the month
-    for (let i = 0; i < firstDay.getDay(); i++) {
-        datesHTML += `<div class="col"></div>`;
-    }
-
-    // Fill in the dates
-    for (let day = 1; day <= lastDay.getDate(); day++) {
-        const date = new Date(year, month, day);
-        const isToday = date.toDateString() === today.toDateString();
-        datesHTML += `
-            <div class="col p-2 ${isToday ? 'bg-warning text-white rounded' : ''}">
+let html = '';
+for (let i = 0; i < firstDay; i++) {
+    html += `<div class="col"></div>`;
+}
+for (let day = 1; day <= totalDays; day++) {
+    const isToday = day === todayDate;
+    html += `
+        <div class="col">
+            <div style="
+                background: linear-gradient(to top left, #f9f9f9, #e0e0e0);
+                border-radius: 0.75rem;
+                padding: 1rem;
+                box-shadow: 3px 3px 8px rgba(0,0,0,0.1), -3px -3px 8px rgba(255,255,255,0.7);
+                transition: transform 0.2s;
+                ${isToday ? 'border: 2px solid #ff9800; background-color: #fff3e0; box-shadow: 0 0 12px #ff9800aa;' : ''}
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 ${day}
             </div>
-        `;
-    }
+        </div>`;
+}
 
-    datesContainer.innerHTML = datesHTML;
-});
+datesContainer.innerHTML = html;
