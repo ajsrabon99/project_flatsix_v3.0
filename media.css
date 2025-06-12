@@ -1,45 +1,30 @@
 /* Responsive styles */
 @media (min-width: 992px) {
-    #menuToggle {
-        display: none; /* Hide toggle button on larger screens */
-    }
+  #menuToggle {
+    display: none;
+  }
 }
 
-/* Responsive Design for contact section */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .contact-section {
         grid-template-columns: 1fr;
-    }
-
-    .contact-info, .contact-form {
-        margin-bottom: 20px;
-    }
-
-    .contact-info .contact-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .social-icons a {
-        font-size: 20px;
+        padding: 15px;
     }
 
     .contact-form button {
         font-size: 16px;
     }
-}
 
-@media (max-width: 480px) {
     .contact-info .icon {
         font-size: 20px;
     }
 
-    .social-icons a {
-        font-size: 18px;
+    .social-icon a {
+        font-size: 20px;
     }
 
-    .contact-form input, .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
         font-size: 14px;
     }
 }
@@ -71,23 +56,28 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .footer-columns {
-        grid-template-columns: 1fr; 
-        gap: 1.5rem; 
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
+
     .footer {
-        padding: 2rem 1rem; 
+        padding: 2rem 1rem;
     }
+
     .footer-column h3 {
-        font-size: 1.25rem; 
+        font-size: 1.25rem;
     }
+
     .footer-column ul li {
         font-size: 0.9rem;
     }
+
     .social-icons a {
         font-size: 1rem;
         margin-right: 0.75rem;
     }
-    .newsletter-form input, 
+
+    .newsletter-form input,
     .newsletter-form button {
         padding: 0.5rem;
         font-size: 0.9rem;
@@ -99,15 +89,18 @@
     .footer-column h3 {
         font-size: 1.1rem;
     }
+
     .footer-column ul li {
-        font-size: 0.8rem; 
+        font-size: 0.8rem;
     }
-    .newsletter-form input, 
+
+    .newsletter-form input,
     .newsletter-form button {
-        font-size: 0.8rem; 
+        font-size: 0.8rem;
     }
+
     .footer-bottom p {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 }
 
@@ -153,12 +146,12 @@
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 10px;
     }
 
     .gallery-item img {
-        height: 150px; 
+        height: 150px;
     }
 }
 
@@ -168,10 +161,27 @@
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .gallery-item img {
         height: 130px;
+    }
+}
+
+.g-recaptcha {
+    transform: scale(1);
+    transform-origin: 0 0;
+}
+
+@media (max-width: 425px) {
+    .g-recaptcha {
+        transform: scale(0.88);
+    }
+}
+
+@media (max-width: 375px) {
+    .g-recaptcha {
+        transform: scale(0.80);
     }
 }

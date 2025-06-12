@@ -24,7 +24,8 @@
     <!-- AOS (Animate On Scroll) Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <!-- Lightbox Library for Fullscreen Image -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
@@ -32,65 +33,44 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Updated 3D Header -->
     <header class="Header text-white py-3 position-relative">
         <div class="container d-flex align-items-center justify-content-between">
             <a href="#" class="navbar-brand d-flex align-items-center text-white">
                 <img src="assets/images/zone.jpeg" alt="Logo" class="me-3" style="width: 50px;">
-                <h1 class="fs-4 mb-0 text-white">Bachelor Zone</h1>
+                <h1 class="fs-4 mb-0 text-white" data-aos="fade-right">Bachelor Zone</h1>
             </a>
 
             <div id="menuToggle" class="d-lg-none">
-                <button id="openMenu" class="btn btn-light">☰</button>
+                <button id="openMenu" class="btn btn-outline-light rounded-circle shadow-sm" style="font-size: 1.8rem;">
+                    ☰
+                </button>
             </div>
 
             <!-- Desktop Navigation -->
             <nav class="d-none d-lg-flex">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Home</a>
+                    <li class="nav-item"><a href="#" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link text-white">About</a></li>
+                    <li class="nav-item"><a href="#members-section" class="nav-link text-white">Members</a></li>
+                    <li class="nav-item"><a href="#rent-section" class="nav-link text-white">Rent Details</a></li>
+                    <li class="nav-item"><a href="#advance-list-section" class="nav-link text-white">Advance List</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link text-white">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#members-section" class="nav-link text-white">Members</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#rent-section" class="nav-link text-white">Rent Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#advance-list-section" class="nav-link text-white">Advance List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#payment-section" class="nav-link text-white">Payment</a>
-                    </li>
+                    <li class="nav-item"><a href="#payment-section" class="nav-link text-white">Payment</a></li>
                 </ul>
             </nav>
         </div>
 
-        <!-- Full-Screen Mobile Menu -->
+        <!-- Mobile Menu -->
         <div id="mobileMenu" class="mobile-menu">
-            <button id="closeMenu" class="btn btn-dark text-white close-button">X</button>
+            <button id="closeMenu" class="btn text-white close-button">✕</button>
             <ul class="nav flex-column text-center">
-                <li class="nav-item">
-                    <a href="#" class="nav-link text-white">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link text-white">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#members-section" class="nav-link text-white">Members</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#rent-section" class="nav-link text-white">Rent Details</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#advance-list-section" class="nav-link text-white">Advance List</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#payment-section" class="nav-link text-white">Payment</a>
-                </li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link text-white">About</a></li>
+                <li class="nav-item"><a href="#members-section" class="nav-link text-white">Members</a></li>
+                <li class="nav-item"><a href="#rent-section" class="nav-link text-white">Rent Details</a></li>
+                <li class="nav-item"><a href="#advance-list-section" class="nav-link text-white">Advance List</a></li>
+                <li class="nav-item"><a href="#payment-section" class="nav-link text-white">Payment</a></li>
             </ul>
         </div>
     </header>
@@ -103,7 +83,7 @@
         <div class="floating-background"></div>
 
         <div class="glass-box container position-relative">
-            <h2 class="display-4 fade-in shadow-text">
+            <h2 class="display-4 fade-in shadow-text" data-aos="fade-up">
                 <span class="text-gradient-orange">Welcome</span> to the <strong class="text-gradient-blue">Bachelor
                     Zone</strong>
             </h2>
@@ -116,7 +96,7 @@
 
 
 
-    <section id="about" class="about py-5 mb-2">
+    <section id="about" class="about py-5 mb-2" data-aos="fade-up">
         <div class="overlay">
             <div class="container">
                 <div class="row align-items-center">
@@ -176,7 +156,7 @@
 
     <section id="members-section" class="py-5 member-section">
         <div class="container text-center">
-            <h2 class="mb-4 display-5 text-glow">🌌 Our Members 🌌</h2>
+            <h2 class="mb-4 display-5 text-glow" data-aos="zoom-in">🌌 Our Members 🌌</h2>
             <button id="verifyButton" class="btn btn-3d mb-4 neon-button">✨ See All Members ✨</button>
             <p class="instruction">👆 Verify before clicking 👆</p>
         </div>
@@ -439,9 +419,11 @@
             <br>
             <p class="text-center text-white">Current bill (March) Average per person :- 0 ৳</p>
             <br>
-            <div class="recaptcha-wrapper text-center my-3">
-                <div class="g-recaptcha" data-sitekey="6Lfu7ckqAAAAAMt4qwqQV_DWjaosaZiDggLcy3_T" id="captcha"></div>
+            <div class="recaptcha-wrapper" style="text-align: center; margin: 1rem 0;">
+                <div class="g-recaptcha" data-sitekey="6Lfu7ckqAAAAAMt4qwqQV_DWjaosaZiDggLcy3_T" id="captcha">
+                </div>
             </div>
+
             <br><br>
             <p id="verifyMessage" class="text-center text-warning">
                 👆 Please verify first (If Google verification is not showing, refresh the page) 👆
@@ -910,7 +892,7 @@
     <section id="contact" style="background: linear-gradient(to right, #1c1c1c, #2c2c2c); padding: 60px 0;">
         <div class="container contact-section">
             <!-- Contact Info -->
-            <div class="contact-info">
+            <div class="contact-info" data-aos="fade-right">
                 <h2 class="text-center text-glow">📍 Contact Info</h2>
 
                 <div class="contact-item d-flex align-items-start">
@@ -948,22 +930,24 @@
             </div>
 
             <!-- Contact Form -->
-            <form class="contact-form">
+            <form class="contact-form" data-aos="fade-left">
                 <h2 class="text-glow">💬 Contact Us</h2>
 
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
+                <label for="name" data-aos="fade-up" data-aos-delay="100">Name:</label>
+                <input type="text" id="name" required data-aos="fade-up" data-aos-delay="200">
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
+                <label for="email" data-aos="fade-up" data-aos-delay="300">Email:</label>
+                <input type="email" id="email" required data-aos="fade-up" data-aos-delay="400">
 
-                <label for="message">Message:</label>
-                <textarea id="message" rows="5" required></textarea>
+                <label for="message" data-aos="fade-up" data-aos-delay="500">Message:</label>
+                <textarea id="message" rows="5" required data-aos="fade-up" data-aos-delay="600"></textarea>
 
-                <button type="submit">Send Message</button>
+                <button type="submit" data-aos="zoom-in" data-aos-delay="700">Send Message</button>
+
             </form>
         </div>
     </section>
+
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
         crossorigin="anonymous"></script>
@@ -1083,6 +1067,15 @@
 
         gtag('config', 'G-BX8LR2YMZY');
     </script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,  
+            once: true       
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>

@@ -2,20 +2,19 @@ const openMenu = document.getElementById("openMenu");
 const closeMenu = document.getElementById("closeMenu");
 const mobileMenu = document.getElementById("mobileMenu");
 const navLinks = mobileMenu.querySelectorAll(".nav-link");
-// Open the mobile menu
+
 openMenu.addEventListener("click", () => {
-    mobileMenu.classList.add("active");
+  mobileMenu.classList.add("active");
 });
 
-// Close the mobile menu
 closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
+  mobileMenu.classList.remove("active");
 });
 
 navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        mobileMenu.classList.remove("active");
-    });
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
 });
 
 //hero
