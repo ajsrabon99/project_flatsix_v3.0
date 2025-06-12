@@ -44,17 +44,17 @@ document.querySelectorAll('.payment-option').forEach(option => {
 //advance
 
 const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('keyup', function () {
-        const filter = searchInput.value.toLowerCase();
-        const rows = document.querySelectorAll('#advance-list-section tbody tr');
+searchInput.addEventListener('keyup', function () {
+    const filter = searchInput.value.toLowerCase();
+    const rows = document.querySelectorAll('#advance-list-section tbody tr');
 
-        rows.forEach(row => {
-            const name = row.cells[0].textContent.toLowerCase();
-            row.style.display = name.includes(filter) ? '' : 'none';
-        });
+    rows.forEach(row => {
+        const name = row.cells[0].textContent.toLowerCase();
+        row.style.display = name.includes(filter) ? '' : 'none';
     });
+});
 
-    
+
 
 //Calendar
 const datesContainer = document.getElementById("dates");
@@ -88,3 +88,17 @@ for (let day = 1; day <= totalDays; day++) {
 }
 
 datesContainer.innerHTML = html;
+
+
+seeMoreBtn.addEventListener('click', () => {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = additionalMembers.trim();
+    const newCards = tempDiv.children;
+
+    for (let card of newCards) {
+        card.classList.add('member-card-animated');
+        membersContainer.appendChild(card);
+    }
+
+    seeMoreBtn.style.display = 'none'; // Hide button after loading more
+});

@@ -1,8 +1,20 @@
 body {
-    background-image: url('https://cdn.stocksnap.io/img-thumbs/280h/colorful-bokeh_FSOBBNPKKZ.jpg');
+    margin: 0;
+    padding: 0;
+    background:
+        linear-gradient(to bottom right, rgba(10, 20, 30, 0.95), rgba(0, 0, 20, 0.85)),
+        url('https://cdn.stocksnap.io/img-thumbs/960w/colorful-bokeh_FSOBBNPKKZ.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    perspective: 1000px;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
+
 
 /* Hero Section Background */
 /* Hero Section */
@@ -277,20 +289,55 @@ body {
 
 /* Rent Section Background */
 .rent-section {
-    padding: 2rem 0;
-    background-image: url('https://c4.wallpaperflare.com/wallpaper/797/548/47/strip-texture-dark-blue-wallpaper-preview.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
+    padding: 4rem 1rem;
+    background: radial-gradient(circle at top left, #0a0f1c, #050816);
     background-size: cover;
+    background-position: center;
     overflow: hidden;
-    box-shadow: inset 0 0 40px rgba(0, 255, 255, 0.1);
+    position: relative;
+    color: #ffffff;
+    border-top: 2px solid rgba(0, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+    box-shadow: inset 0 0 60px rgba(0, 255, 255, 0.08), 0 0 30px rgba(0, 255, 255, 0.15);
+    perspective: 1000px;
+    z-index: 1;
 }
 
-/* Optional if you want to override specifically with solid background */
-#rent-section {
-    background-color: rgba(23, 220, 255, 0.1);
-    /* semi-transparent cyan */
+/* Glow circle effect */
+.rent-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.15), transparent 70%);
+    top: -100px;
+    right: -100px;
+    filter: blur(100px);
+    z-index: 0;
 }
+
+/* Text Styling (optional) */
+.rent-section h2,
+.rent-section h3,
+.rent-section p {
+    color: #ccf7ff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+/* Optional element fade-glow */
+.rent-section .glow-box {
+    background-color: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    position: relative;
+}
+
 
 /* 3D Rent Table Style */
 .rent-table {
@@ -487,6 +534,7 @@ body {
     transform: translateY(-5px) scale(1.03);
     color: #fff;
 }
+
 #payment-section .paynagad {
     background: linear-gradient(145deg, #e3ae00, #fabe18);
     color: white;
@@ -651,7 +699,7 @@ tbody tr:nth-child(odd) {
 
 
 
-#members-section {
+/* #members-section {
     background-image: url('https://wallpapers.com/images/featured/dark-blue-1u6lldkvi9buf4rl.jpg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -660,7 +708,7 @@ tbody tr:nth-child(odd) {
     min-height: 300px;
     color: white;
 
-}
+} */
 
 
 /* Gallery Section */
@@ -824,26 +872,50 @@ tbody tr:nth-child(odd) {
 
 /* Footer Section */
 .footer {
-    background-image: url('https://t3.ftcdn.net/jpg/05/00/76/76/360_F_500767676_mZzz2hyDsFsiZksszm6dSfgHX6cI3M9T.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    overflow: hidden;
-    min-height: 150px;
-    color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #e0e0e0;
     padding: 4rem 1rem;
+    position: relative;
+    box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.02);
+    border-top: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 165, 0, 0.3), transparent 70%);
+    z-index: 0;
 }
 
 .footer-columns {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-column {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.footer-column:hover {
+    transform: translateY(-5px);
 }
 
 .footer-column h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #f28417;
+    color: #ff944d;
 }
 
 .footer-column ul {
@@ -855,91 +927,83 @@ tbody tr:nth-child(odd) {
 .footer-column ul li {
     margin-bottom: 1rem;
     font-size: 1rem;
-    color: #ccc;
+    color: #bbb;
 }
 
 .footer-column ul li i {
     margin-right: 0.5rem;
-    color: #f28417;
+    color: #ffa500;
 }
 
 .footer-column ul li a {
-    color: #ccc;
+    color: #bbb;
     text-decoration: none;
-}
-
-.footer-column ul li a:hover {
-    color: #f28417;
-}
-
-.social-icons {
-    margin-top: 1rem;
-}
-
-.social-icons a {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-right: 1rem;
     transition: color 0.3s;
 }
 
-.social-icons a:hover {
-    color: #cf751b;
+.footer-column ul li a:hover {
+    color: #ffa500;
 }
 
 /* Newsletter Form */
 .newsletter-form {
     display: flex;
     margin-top: 1rem;
+    border-radius: 50px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 .newsletter-form input {
     flex: 1;
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
     border: none;
-    border-radius: 4px 0 0 4px;
+    background: transparent;
+    color: #fff;
     font-size: 1rem;
+}
+
+.newsletter-form input::placeholder {
+    color: #aaa;
 }
 
 .newsletter-form button {
-    background-color: #f28417;
-    color: #fff;
-    padding: 0.75rem 1rem;
+    background: linear-gradient(to right, #f57b51, #f28417);
+    color: white;
     border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
+    padding: 0.75rem 1.2rem;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .newsletter-form button:hover {
-    background-color: #b76e24;
-}
-
-.newsletter-form button i {
-    margin: 0 10px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: larger;
+    background: linear-gradient(to right, #ffa15f, #f96e1d);
 }
 
 .newsletter-form button a {
     text-decoration: none;
-    color: white;
+    color: inherit;
+}
+
+/* Footer Images */
+.footer-column img {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
 }
 
 /* Footer Bottom */
 .footer-bottom {
-    margin-top: 1rem;
-    border-top: 1px solid #f28417;
+    margin-top: 2rem;
     padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
-}
-
-.footer-bottom p {
-    font-size: 1.3rem;
-    color: #ffffff;
-    margin-top: 0.3rem;
+    font-size: 1.1rem;
+    color: #ccc;
 }
 
 /* From Uiverse.io by cssbuttons-io */

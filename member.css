@@ -1,0 +1,118 @@
+/* Section Background */
+#members-section {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f0f0f0;
+}
+
+/* Card Styling */
+#members-section .card {
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #1c1e26, #2b2e38);
+    color: #fff;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+#members-section .card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Image Styling */
+#members-section .card-img-top {
+    border-radius: 15px;
+    height: 250px;
+    object-fit: cover;
+    border: 2px solid #00c6ff;
+}
+
+/* Card Text */
+#members-section .card-body h5 {
+    font-weight: 600;
+    color: #00c6ff;
+    margin-bottom: 10px;
+}
+
+#members-section .card-body p {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+/* Buttons */
+#members-section .btn-sm {
+    font-size: 0.85rem;
+    border-radius: 30px;
+    padding: 6px 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 198, 255, 0.3);
+}
+
+#members-section .btn-success {
+    background-color: #1abc9c;
+    border: none;
+}
+
+#members-section .btn-primary {
+    background-color: #3498db;
+    border: none;
+}
+
+#members-section .btn-sm:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 198, 255, 0.6);
+}
+
+/* See More Button */
+#seeMoreBtn {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 114, 255, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+#seeMoreBtn:hover {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(0, 114, 255, 0.6);
+}
+
+/* Back Button */
+#members-section .btn-danger {
+    background-color: #e74c3c;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#members-section .btn-danger:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.5);
+}
+
+/* Animate member cards */
+.member-card-animated {
+    animation: fadeInUp 0.6s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
