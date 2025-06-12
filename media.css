@@ -1,187 +1,172 @@
-/* Responsive styles */
+/* Base Fix: Box-sizing for consistent padding/border sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==================== GENERAL ==================== */
+
+/* Navigation Toggle Button (Responsive) */
 @media (min-width: 992px) {
   #menuToggle {
-    display: none;
+    display: none; /* Hide menu toggle on larger screens */
   }
 }
 
+/* ==================== MOBILE: General Layout (≤768px) ==================== */
 @media screen and (max-width: 768px) {
-    .contact-section {
-        grid-template-columns: 1fr;
-        padding: 15px;
-    }
+  /* Contact Section */
+  .contact-section {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
 
-    .contact-form button {
-        font-size: 16px;
-    }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
 
-    .contact-info .icon {
-        font-size: 20px;
-    }
+  .contact-form button {
+    font-size: 16px;
+  }
 
-    .social-icon a {
-        font-size: 20px;
-    }
+  .contact-info .icon {
+    font-size: 20px;
+  }
 
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 14px;
-    }
+  .social-icon a {
+    font-size: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-column h3 {
+    font-size: 1.25rem;
+  }
+
+  .footer-column ul li {
+    font-size: 0.9rem;
+  }
+
+  .social-icons a {
+    font-size: 1rem;
+    margin-right: 0.75rem;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Gallery */
+  #gallery-section .section-title {
+    font-size: 1.8rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-item img {
+    height: 150px;
+    border-radius: 5px;
+  }
+
+  /* Global Section Title */
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  /* Rent Table */
+  .table {
+    font-size: 14px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+  }
 }
 
-/* Responsive rent-table */
-@media (max-width: 768px) {
-    .table {
-        font-size: 14px;
-    }
-
-    th,
-    td {
-        padding: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .table {
-        font-size: 12px;
-    }
-
-    th,
-    td {
-        padding: 5px;
-    }
-}
-
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .footer-columns {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .footer {
-        padding: 2rem 1rem;
-    }
-
-    .footer-column h3 {
-        font-size: 1.25rem;
-    }
-
-    .footer-column ul li {
-        font-size: 0.9rem;
-    }
-
-    .social-icons a {
-        font-size: 1rem;
-        margin-right: 0.75rem;
-    }
-
-    .newsletter-form input,
-    .newsletter-form button {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Very Small Screens (Optional) */
-@media (max-width: 480px) {
-    .footer-column h3 {
-        font-size: 1.1rem;
-    }
-
-    .footer-column ul li {
-        font-size: 0.8rem;
-    }
-
-    .newsletter-form input,
-    .newsletter-form button {
-        font-size: 0.8rem;
-    }
-
-    .footer-bottom p {
-        font-size: 1rem;
-    }
-}
-
-
-
-/* Gallery Responsive Design */
-@media (max-width: 768px) {
-    #gallery-section .section-title {
-        font-size: 1.8rem;
-    }
-
-    .gallery-grid {
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #gallery-section .section-title {
-        font-size: 1.5rem;
-    }
-
-    .gallery-item img {
-        border-radius: 5px;
-    }
-}
-
-/* Hover Effects (For Desktop) */
-@media (hover: hover) {
-    .gallery-item:hover img {
-        transform: scale(1.1);
-    }
-
-    .gallery-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 10px;
-    }
-
-    .gallery-item img {
-        height: 150px;
-    }
-}
-
+/* ==================== SMALLER MOBILE (≤480px) ==================== */
 @media screen and (max-width: 480px) {
-    .section-title {
-        font-size: 1.5rem;
-    }
+  .section-title {
+    font-size: 1.5rem;
+  }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .gallery-item img {
-        height: 130px;
-    }
+  .gallery-item img {
+    height: 130px;
+  }
+
+  /* Footer */
+  .footer-column h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-column ul li {
+    font-size: 0.8rem;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom p {
+    font-size: 1rem;
+  }
+
+  /* Table Adjustments */
+  .table {
+    font-size: 12px;
+  }
+
+  .table th,
+  .table td {
+    padding: 5px;
+  }
 }
 
-.g-recaptcha {
-    transform: scale(1);
-    transform-origin: 0 0;
-}
+/* ==================== EXTRA SMALL SCREENS ==================== */
 
+/* reCAPTCHA scaling for small screens */
 @media (max-width: 425px) {
-    .g-recaptcha {
-        transform: scale(0.88);
-    }
+  .g-recaptcha {
+    transform: scale(0.88);
+    transform-origin: 0 0;
+  }
 }
 
 @media (max-width: 375px) {
-    .g-recaptcha {
-        transform: scale(0.80);
-    }
+  .g-recaptcha {
+    transform: scale(0.80);
+  }
+}
+
+/* ==================== DESKTOP HOVER EFFECTS ==================== */
+@media (hover: hover) {
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
 }
