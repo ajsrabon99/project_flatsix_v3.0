@@ -1088,42 +1088,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const toggleTableBtn = document.getElementById('toggleTableBtn');
-        const rentTable = document.getElementById('rentTable');
-        const verifyMessage = document.getElementById('verifyMessage');
-        const videoContainer = document.querySelector('.video-container'); // <-- Get the video container
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleTableBtn = document.getElementById('toggleTableBtn');
+            const rentTable = document.getElementById('rentTable');
+            const verifyMessage = document.getElementById('verifyMessage');
+            const videoContainer = document.querySelector('.video-container'); // <-- Get the video container
 
-        if (sessionStorage.getItem("verified")) {
-            verifyMessage.style.display = 'none';
-        }
-
-        toggleTableBtn.addEventListener('click', function () {
-            if (!sessionStorage.getItem("verified")) {
-                const response = grecaptcha.getResponse();
-
-                if (!response) {
-                    alert("⚠️ Please complete the verification first!\n\n👉 If Google verification is not showing, refresh the page.");
-                    return;
-                }
-
-                sessionStorage.setItem("verified", "true");
+            if (sessionStorage.getItem("verified")) {
                 verifyMessage.style.display = 'none';
             }
 
-            const isTableHidden = rentTable.style.display === 'none' || rentTable.style.display === '';
+            toggleTableBtn.addEventListener('click', function () {
+                if (!sessionStorage.getItem("verified")) {
+                    const response = grecaptcha.getResponse();
 
-            // Toggle display of rent table
-            rentTable.style.display = isTableHidden ? 'block' : 'none';
+                    if (!response) {
+                        alert("⚠️ Please complete the verification first!\n\n👉 If Google verification is not showing, refresh the page.");
+                        return;
+                    }
 
-            // Toggle video visibility
-            videoContainer.style.display = isTableHidden ? 'none' : 'flex';
+                    sessionStorage.setItem("verified", "true");
+                    verifyMessage.style.display = 'none';
+                }
 
-            // Update button text
-            toggleTableBtn.textContent = isTableHidden ? '⛔ Hide Rent Details' : '▶ Show Rent Details';
+                const isTableHidden = rentTable.style.display === 'none' || rentTable.style.display === '';
+
+                // Toggle display of rent table
+                rentTable.style.display = isTableHidden ? 'block' : 'none';
+
+                // Toggle video visibility
+                videoContainer.style.display = isTableHidden ? 'none' : 'flex';
+
+                // Update button text
+                toggleTableBtn.textContent = isTableHidden ? '⛔ Hide Rent Details' : '▶ Show Rent Details';
+            });
         });
-    });
-</script>
+    </script>
 
 
 

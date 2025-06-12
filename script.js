@@ -40,9 +40,7 @@ document.querySelectorAll('.payment-option').forEach(option => {
 });
 
 
-
 //advance
-
 const searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('keyup', function () {
     const filter = searchInput.value.toLowerCase();
