@@ -145,7 +145,13 @@
 
 /* ==================== EXTRA SMALL SCREENS ==================== */
 
-/* reCAPTCHA scaling for small screens */
+/* Default: normal scale */
+.g-recaptcha {
+  transform: scale(1);
+  transform-origin: 0 0;
+}
+
+/* For screens smaller than 425px */
 @media (max-width: 425px) {
   .g-recaptcha {
     transform: scale(0.88);
@@ -153,11 +159,22 @@
   }
 }
 
+/* Even smaller screens */
 @media (max-width: 375px) {
   .g-recaptcha {
-    transform: scale(0.80);
+    transform: scale(0.8);
+    transform-origin: 0 0;
   }
 }
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .g-recaptcha {
+    transform: scale(0.75);
+    transform-origin: 0 0;
+  }
+}
+
 
 /* ==================== DESKTOP HOVER EFFECTS ==================== */
 @media (hover: hover) {
