@@ -19,6 +19,8 @@
     </script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -90,7 +92,7 @@
 
             <div class="row" id="members-container">
                 <!-- Member 1 -->
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="flip-left">
                     <div class="card p-3 mb-4">
                         <img src="assets/members image/Aj_srabon.jpg" class="card-img-top" alt="Srabon">
                         <div class="card-body">
@@ -112,7 +114,7 @@
                     </div>
                 </div>
                 <!-- Member 2 -->
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="zoom-in">
                     <div class="card p-3 mb-4">
                         <img src="assets/members image/tanvir_.jpg" class="card-img-top" alt="Tanvir">
                         <div class="card-body">
@@ -137,7 +139,7 @@
                     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
                     crossorigin="anonymous"></script>
                 <!-- Member 3 -->
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="flip-right">
                     <div class="card p-3 mb-4">
                         <img src="assets/members image/Sizar.jpg" class="card-img-top" alt="Sizar">
                         <div class="card-body">
@@ -182,7 +184,7 @@
         const seeMoreBtn = document.getElementById('seeMoreBtn');
 
         const additionalMembers = `
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up">
                 <div class="card p-3 mb-4">
                     <img src="assets/members image/Rafi.jpg" class="card-img-top" alt="Rafi">
                     <div class="card-body">
@@ -202,7 +204,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up">
                 <div class="card p-3 mb-4">
                     <img src="assets/members image/Ucchas.jpg" class="card-img-top" alt="Ucchas">
                     <div class="card-body">
@@ -222,7 +224,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up">
                 <div class="card p-3 mb-4">
                     <img src="assets/members image/Tafsir.jpg" class="card-img-top" alt="Tafsir">
                     <div class="card-body">
@@ -242,7 +244,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up">
                 <div class="card p-3 mb-4">
                     <img src="assets/members image/Tuhin.jpg" class="card-img-top" alt="Tuhin">
                     <div class="card-body">
@@ -262,7 +264,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up">
                 <div class="card p-3 mb-4">
                     <img src="assets/members image/Rifat.jpg" class="card-img-top" alt="Rifat">
                     <div class="card-body">
@@ -282,7 +284,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up">
                 <div class="card p-3 mb-4">
                     <img src="assets/members image/Asiq.jpg" class="card-img-top" alt="Asiq">
                     <div class="card-body">
@@ -377,7 +379,17 @@
             </div>
         </div>
     </footer>
-    
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // animation duration in ms
+            once: true      // animation only once on scroll
+        });
+    </script>
+
+
 </body>
 
 </html>
