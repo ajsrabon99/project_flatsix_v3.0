@@ -132,92 +132,92 @@ body {
 
 
 .Header {
-  background: linear-gradient(135deg, #141e30, #243b55);
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transform-style: preserve-3d;
-  perspective: 1000px;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .nav-link {
-  font-weight: bold;
-  color: #fff;
-  transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #ffc107;
-  transform: scale(1.1);
+    color: #ffc107;
+    transform: scale(1.1);
 }
 
 .mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(135deg, #141e30, #243b55);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
 .mobile-menu.active {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 .close-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .close-button:hover {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .mobile-menu ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .mobile-menu ul li {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .mobile-menu ul li a {
-  font-size: 1.8rem;
-  color: #fff;
-  text-decoration: none;
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
 }
 
 #menuToggle button {
-  font-size: 2rem;
-  background: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 #menuToggle button:hover {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 
@@ -305,7 +305,7 @@ body {
     z-index: 0;
 }
 
-/* Text Styling (optional) */
+/* Text Styling */
 .rent-section h2,
 .rent-section h3,
 .rent-section p {
@@ -327,13 +327,18 @@ body {
     position: relative;
 }
 
-
-/* 3D Rent Table Style */
+/* 3D Rent Table Style with Animated Gradient */
 .rent-table {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
     transform-style: preserve-3d;
     perspective: 1000px;
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Table Enhancement */
@@ -341,7 +346,7 @@ body {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    background-color: #1a1a2e;
+    background-color: rgba(26, 26, 46, 0.9);
     color: #ffffff;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
     border-radius: 10px;
@@ -374,7 +379,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Button Styling */
+/* Toggle Button */
 #toggleTableBtn {
     background: linear-gradient(145deg, #00f2fe, #4facfe);
     border: none;
@@ -391,25 +396,7 @@ body {
     box-shadow: 0 0 20px #00e1ff, 0 0 30px #00bcd4;
 }
 
-/* Video Container */
-.video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding: 20px;
-}
-
-.video-container video {
-    max-width: 100%;
-    height: auto;
-    border: 3px solid #00e1ff;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 255, 255, 0.3);
-}
-
-/* Animation */
+/* Fade-in 3D Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -422,13 +409,24 @@ body {
     }
 }
 
+/* Background Gradient Animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .text-glow2 {
     text-shadow: none !important;
     color: white;
-}
-.recaptcha-wrapper {
-  max-width: 100%;
-  overflow-x: auto;
 }
 
 

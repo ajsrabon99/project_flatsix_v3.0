@@ -408,32 +408,15 @@
 
     <!-- Rent Details Section -->
     <section id="rent-section" class="rent-section py-5">
-        <script async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
-            crossorigin="anonymous"></script>
         <div class="container">
             <h3 class="text-center mb-4 text-glow2">Rent Details</h3>
             <p class="text-center text-white">Month of <strong>June</strong></p>
-            <br>
             <p class="text-center text-white">Current bill (March) Average per person :- 0 ৳</p>
-            <br>
-            <div class="recaptcha-wrapper">
-                <div class="g-recaptcha" data-sitekey="6Lfu7ckqAAAAAMt4qwqQV_DWjaosaZiDggLcy3_T" data-size="compact">
-                </div>
 
+            <div class="text-center mt-3 mb-4">
+                <button id="toggleTableBtn" class="btn btn-glow">▶ Show Rent Details</button>
             </div>
-            <br><br>
-            <p id="verifyMessage" class="text-center text-warning">
-                👆 Please verify first (If Google verification is not showing, refresh the page) 👆
-            </p>
-            <div class="text-center">
-                <button id="toggleTableBtn" class="btn btn-glow mb-4">▶ Show Rent Details</button>
-            </div>
-            <div class="video-container">
-                <video src="assets/video/refresh.mp4" autoplay muted loop playsinline></video>
-            </div>
-            <p class="text-center text-white">Click on <strong>"Show Rent Details"</strong> button to view rent details
-            </p>
+
             <div id="rentTable" class="rent-table" style="display: none;">
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered text-center shadow-lg rounded">
@@ -1022,35 +1005,10 @@
         document.addEventListener("DOMContentLoaded", function () {
             const toggleTableBtn = document.getElementById('toggleTableBtn');
             const rentTable = document.getElementById('rentTable');
-            const verifyMessage = document.getElementById('verifyMessage');
-            const videoContainer = document.querySelector('.video-container'); // <-- Get the video container
-
-            if (sessionStorage.getItem("verified")) {
-                verifyMessage.style.display = 'none';
-            }
 
             toggleTableBtn.addEventListener('click', function () {
-                if (!sessionStorage.getItem("verified")) {
-                    const response = grecaptcha.getResponse();
-
-                    if (!response) {
-                        alert("⚠️ Please complete the verification first!\n\n👉 If Google verification is not showing, refresh the page.");
-                        return;
-                    }
-
-                    sessionStorage.setItem("verified", "true");
-                    verifyMessage.style.display = 'none';
-                }
-
                 const isTableHidden = rentTable.style.display === 'none' || rentTable.style.display === '';
-
-                // Toggle display of rent table
                 rentTable.style.display = isTableHidden ? 'block' : 'none';
-
-                // Toggle video visibility
-                videoContainer.style.display = isTableHidden ? 'none' : 'flex';
-
-                // Update button text
                 toggleTableBtn.textContent = isTableHidden ? '⛔ Hide Rent Details' : '▶ Show Rent Details';
             });
         });
