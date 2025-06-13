@@ -15,8 +15,6 @@ body {
     min-height: 100vh;
 }
 
-
-/* Hero Section Background */
 /* Hero Section */
 .hero-section {
     background: url('assets/images/banner.jpg') no-repeat center center/cover;
@@ -129,8 +127,6 @@ body {
     }
 }
 
-
-
 .Header {
     background: linear-gradient(135deg, #141e30, #243b55);
     background-size: cover;
@@ -221,8 +217,6 @@ body {
 }
 
 
-
-
 /* about  */
 .about {
     position: relative;
@@ -260,7 +254,6 @@ body {
     transform: scale(1.05);
     box-shadow: 0 15px 35px rgba(255, 140, 0, 0.4);
 }
-
 
 
 /* Card Hover Effect */
@@ -315,7 +308,6 @@ body {
     z-index: 2;
 }
 
-/* Optional element fade-glow */
 .rent-section .glow-box {
     background-color: rgba(0, 255, 255, 0.05);
     border: 1px solid rgba(0, 255, 255, 0.2);
@@ -327,7 +319,6 @@ body {
     position: relative;
 }
 
-/* 3D Rent Table Style with Animated Gradient */
 .rent-table {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
@@ -428,7 +419,6 @@ body {
     text-shadow: none !important;
     color: white;
 }
-
 
 
 #advance-list-section {
@@ -636,10 +626,6 @@ body {
 }
 
 
-
-
-
-
 .contact-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -777,20 +763,6 @@ tbody tr:nth-child(even) {
 tbody tr:nth-child(odd) {
     background-color: #fff;
 }
-
-
-
-/* #members-section {
-    background-image: url('https://wallpapers.com/images/featured/dark-blue-1u6lldkvi9buf4rl.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    overflow: hidden;
-    min-height: 300px;
-    color: white;
-
-} */
-
 
 /* Gallery Section */
 #gallery-section {
@@ -947,8 +919,6 @@ tbody tr:nth-child(odd) {
     transform: scale(1.01);
     box-shadow: 0 12px 35px rgba(0, 255, 255, 0.5);
 }
-
-
 
 
 /* Footer Section */

@@ -6,29 +6,25 @@
 }
 
 /* ==================== GENERAL ==================== */
-
-/* Navigation Toggle Button (Responsive) */
 @media (min-width: 992px) {
   #menuToggle {
     display: none;
-    /* Hide menu toggle on larger screens */
   }
 }
 
 /* ==================== MOBILE: General Layout (≤768px) ==================== */
 @media screen and (max-width: 768px) {
 
-  /* Contact Section Layout */
+  /* Contact Section */
   .contact-section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px 10px;
-    text-align: center;
   }
 
-  /* Form Styling */
-  .contact-form {
+  .contact-form,
+  .contact-info {
     width: 100%;
   }
 
@@ -38,7 +34,6 @@
     font-size: 14px;
     padding: 10px;
     margin-bottom: 10px;
-    box-sizing: border-box;
   }
 
   .contact-form textarea {
@@ -52,14 +47,8 @@
     width: 100%;
   }
 
-  /* Contact Info & Icons */
-  .contact-info {
-    width: 100%;
-  }
-
   .contact-info .icon {
     font-size: 20px;
-    display: inline-block;
     margin-right: 8px;
   }
 
@@ -72,8 +61,6 @@
     margin: 0 6px;
     display: inline-block;
   }
-
-
 
   /* Footer */
   .footer {
@@ -99,35 +86,43 @@
     margin-right: 0.75rem;
   }
 
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
   .newsletter-form input,
   .newsletter-form button {
+    width: 100%;
     padding: 0.5rem;
     font-size: 0.9rem;
   }
 
   /* Gallery */
-  #gallery-section .section-title {
+  #gallery-section .section-title,
+  .section-title {
     font-size: 1.8rem;
   }
 
   .gallery-grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 10px;
   }
 
   .gallery-item img {
     height: 150px;
+    width: 100%;
+    object-fit: cover;
     border-radius: 5px;
   }
 
-  /* Global Section Title */
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  /* Rent Table */
+  /* Table */
   .table {
     font-size: 14px;
+    width: 100%;
+    overflow-x: auto;
   }
 
   .table th,
@@ -138,6 +133,7 @@
 
 /* ==================== SMALLER MOBILE (≤480px) ==================== */
 @media screen and (max-width: 480px) {
+
   .section-title {
     font-size: 1.5rem;
   }
@@ -168,7 +164,7 @@
     font-size: 1rem;
   }
 
-  /* Table Adjustments */
+  /* Table */
   .table {
     font-size: 12px;
   }
@@ -178,7 +174,6 @@
     padding: 5px;
   }
 }
-
 
 /* ==================== DESKTOP HOVER EFFECTS ==================== */
 @media (hover: hover) {
