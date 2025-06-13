@@ -2,44 +2,153 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media.css">
-</head>
-
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-...your-integrity..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+        /* Font & Base */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background-size: 400% 400%;
+            animation: animatedBG 20s ease infinite;
+            position: relative;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        @keyframes animatedBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Pulsing Glows */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: pulseGlow 6s infinite alternate;
+            z-index: 0;
+        }
+
+        .orb1 {
+            width: 300px;
+            height: 300px;
+            background: gold;
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .orb2 {
+            width: 250px;
+            height: 250px;
+            background: #ff6ec4;
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .orb3 {
+            width: 200px;
+            height: 200px;
+            background: #30cfd0;
+            top: 40%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        .orb4 {
+            width: 200px;
+            height: 200px;
+            background: #6b7fff;
+            top: 40%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        .orb5 {
+            width: 200px;
+            height: 200px;
+            background: #5fff92;
+            top: 40%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        .orb6 {
+            width: 200px;
+            height: 200px;
+            background: #ff27d4;
+            top: 40%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                opacity: 0.05;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(1.2);
+            }
+
+            100% {
+                opacity: 0.05;
+                transform: scale(1);
+            }
+        }
+
         .privacy-container {
-            max-width: 800px;
-            background: white;
-            margin: 3rem auto;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(12px);
+            margin: 4rem auto;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            color: #f8f8f8;
         }
 
         h1 {
             text-align: center;
-            color: #f28417;
-            font-size: 2rem;
+            color: #ffcc70;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
         }
 
         h2 {
-            color: #f28417;
-            margin-top: 1.5rem;
-            border-bottom: 2px solid #f28417;
+            color: #ffd369;
+            margin-top: 1.8rem;
             padding-bottom: 0.5rem;
+            border-left: 5px solid #ffd369;
+            padding-left: 1rem;
         }
 
         ul {
@@ -55,14 +164,14 @@
 
         ul li::before {
             content: "✔";
-            color: #f28417;
+            color: #ffcc70;
             font-weight: bold;
             position: absolute;
             left: 0;
         }
 
         a {
-            color: #f28417;
+            color: #ffd369;
             text-decoration: none;
             font-weight: bold;
         }
@@ -70,16 +179,113 @@
         a:hover {
             text-decoration: underline;
         }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem 1rem;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #ffd369;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #ffd369;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.5rem;
+            width: 70%;
+            border-radius: 5px;
+            border: none;
+            margin-right: 0.5rem;
+        }
+
+        .newsletter-form button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: #ffcc70;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .newsletter-form button a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 1.5rem;
+                margin: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .newsletter-form input {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
     </style>
+</head>
 
-
+<body>
+    <!-- Animated Glow Orbs -->
+    <div class="glow-orb orb1"></div>
+    <div class="glow-orb orb2"></div>
+    <div class="glow-orb orb3"></div>
+    <div class="glow-orb orb4"></div>
+    <div class="glow-orb orb5"></div>
+    <div class="glow-orb orb6"></div>
 
     <div class="privacy-container">
         <h1>Privacy Policy</h1>
         <p><strong>Effective Date:</strong> 23/10/2024</p>
-
-        <p>At <strong>Bachelor Zone</strong>, we are committed to protecting your privacy. This Privacy Policy outlines
-            how we collect, use, and protect any personal information you provide when using our services.</p>
+        <p>
+            At <strong>Bachelor Zone</strong>, we are committed to protecting your privacy. This Privacy Policy outlines
+            how
+            we collect, use, and protect any personal information you provide when using our services.
+        </p>
 
         <h2>1. Information We Collect</h2>
         <ul>
@@ -117,7 +323,6 @@
         </ul>
 
         <h2>Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, contact us:</p>
         <ul>
             <li>Email: <a href="mailto:ashrafuzzamansrabon@gmail.com">ashrafuzzamansrabon@gmail.com</a></li>
             <li>Website: <a href="http://aj-srabon-portfolio.netlify.app/" target="_blank">AJ Srabon</a></li>
@@ -125,62 +330,47 @@
         </ul>
     </div>
 
-
     <footer class="footer">
-        <div class="container">
-            <div class="footer-columns">
-                <!-- Column 1: Contact Info -->
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fa fa-map-marker"></i> Modhubag 3no. goli, Hatirjheel, Dhaka</li>
-                        <li><i class="fa fa-phone"></i> +880 132 720 6804</li>
-                        <li><i class="fa fa-envelope"></i> ashrafuzzamansrabon@gmail.com</li>
-                        <li>
-                            <a href="Privacy_Policy.html" class="privacy-policy-link">
-                                <i class="fa-solid fa-shield"></i> Privacy Policy
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Logo at the bottom -->
-                    <img src="aj_bz_logo.jpg" alt="Bachelor Zone Logo" style="width: 150px; margin-top: 1rem;">
-                </div>
-
-                <!-- Column 2: Quick Links -->
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html#hero">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#rent-section">Rent Details</a></li>
-                        <li><a href="index.html#advance-list-section">Advance List</a></li>
-                        <li><a href="index.html#members-section">Members</a></li>
-                        <li><a href="index.html#payment-section">Payment</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Emergency Contact -->
-                <div class="footer-column">
-                    <h3>Emergency Contact</h3>
-                    <p>Enter your email and Click Go.</p>
-                    <form action="#" method="post" class="newsletter-form">
-                        <input type="email" name="email" placeholder="Your E-mail" required>
-                        <button type="submit" class="btn"><a href="https://wa.me/+8801907714651">Go</a></button>
-                    </form>
-                    <br>
-                    <!-- Sent Money Method -->
-                    <h3>Send Money Method</h3>
-                    <img src="bks_ngd_lodo.jpg" alt="Payment Methods" style="width: 150px; margin-top: 1rem;">
-                </div>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fa fa-map-marker"></i> Modhubag 3no. goli, Hatirjheel, Dhaka</li>
+                    <li><i class="fa fa-phone"></i> +880 132 720 6804</li>
+                    <li><i class="fa fa-envelope"></i> ashrafuzzamansrabon@gmail.com</li>
+                    <li><a href="Privacy_Policy.html"><i class="fa-solid fa-shield"></i> Privacy Policy</a></li>
+                </ul>
+                <img src="aj_bz_logo.jpg" alt="Bachelor Zone Logo" style="width: 150px; margin-top: 1rem;">
             </div>
 
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>© 2025 Bachelor Zone. All Rights Reserved.</p>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#hero">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#rent-section">Rent Details</a></li>
+                    <li><a href="index.html#advance-list-section">Advance List</a></li>
+                    <li><a href="index.html#members-section">Members</a></li>
+                    <li><a href="index.html#payment-section">Payment</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Emergency Contact</h3>
+                <p>Enter your email and Click Go.</p>
+                <form action="#" method="post" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Your E-mail" required>
+                    <button type="submit"><a href="https://wa.me/+8801907714651">Go</a></button>
+                </form>
+                <h3>Send Money Method</h3>
+                <img src="bks_ngd_lodo.jpg" alt="Payment Methods" style="width: 150px; margin-top: 1rem;">
             </div>
         </div>
-    </footer>
 
+        <div class="footer-bottom">
+            <p>© 2025 Bachelor Zone. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 
-</html> 
+</html>
