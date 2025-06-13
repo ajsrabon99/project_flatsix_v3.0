@@ -19,7 +19,7 @@
   /* Contact Section */
   .contact-section {
     grid-template-columns: 1fr;
-    padding: 15px;
+    padding: 50px;
   }
 
   .contact-form input,
