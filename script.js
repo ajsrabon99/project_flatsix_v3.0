@@ -4,17 +4,17 @@ const mobileMenu = document.getElementById("mobileMenu");
 const navLinks = mobileMenu.querySelectorAll(".nav-link");
 
 openMenu.addEventListener("click", () => {
-  mobileMenu.classList.add("active");
+    mobileMenu.classList.add("active");
 });
 
 closeMenu.addEventListener("click", () => {
-  mobileMenu.classList.remove("active");
+    mobileMenu.classList.remove("active");
 });
 
 navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-  });
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+    });
 });
 
 //hero
@@ -53,12 +53,10 @@ searchInput.addEventListener('keyup', function () {
 
 
 
-//Calendar
 const datesContainer = document.getElementById("dates");
-const firstDay = new Date(2025, 5, 1).getDay(); // June = month 5 (0-indexed)
+const firstDay = new Date(2025, 5, 1).getDay(); // June = 5
 const totalDays = 30;
 
-// Highlight today's date (June 11, 2025)
 const today = new Date();
 const isJune2025 = today.getFullYear() === 2025 && today.getMonth() === 5;
 const todayDate = isJune2025 ? today.getDate() : null;
@@ -70,20 +68,21 @@ for (let i = 0; i < firstDay; i++) {
 for (let day = 1; day <= totalDays; day++) {
     const isToday = day === todayDate;
     html += `
-        <div class="col">
-            <div style="
-                background: linear-gradient(to top left, #f9f9f9, #e0e0e0);
-                border-radius: 0.75rem;
-                padding: 1rem;
-                box-shadow: 3px 3px 8px rgba(0,0,0,0.1), -3px -3px 8px rgba(255,255,255,0.7);
-                transition: transform 0.2s;
-                ${isToday ? 'border: 2px solid #ff9800; background-color: #fff3e0; box-shadow: 0 0 12px #ff9800aa;' : ''}
-            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                ${day}
-            </div>
-        </div>`;
+    <div class="col">
+      <div style="
+        background: linear-gradient(to top left, #3f3f46, #222);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.6),
+                    -3px -3px 10px rgba(255,255,255,0.05);
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+        ${isToday ? 'border: 2px solid #ffcc00; background-color: #2b2b2b; box-shadow: 0 0 15px #ffcc00aa;' : ''}
+      " onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+        ${day}
+      </div>
+    </div>`;
 }
-
 datesContainer.innerHTML = html;
 
 
