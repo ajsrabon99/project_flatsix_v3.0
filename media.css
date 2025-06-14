@@ -186,3 +186,40 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
 }
+
+@media (max-width: 768px) {
+  .advance-table th,
+  .advance-table td {
+    font-size: 0.85rem;
+    padding: 10px 8px;
+  }
+
+  #advance-list-section h2 {
+    font-size: 1.5rem;
+  }
+
+  #searchInput {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .advance-table th,
+  .advance-table td {
+    font-size: 0.75rem;
+    padding: 8px 6px;
+  }
+
+  #advance-list-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .advance-table {
+    box-shadow: none;
+  }
+
+  #advance-list-section {
+    padding: 40px 15px;
+  }
+}
