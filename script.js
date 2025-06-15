@@ -100,3 +100,49 @@ seeMoreBtn.addEventListener('click', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const chatToggleBtn = document.getElementById('chatToggleBtn');
+  const chatBox = document.getElementById('chatBox');
+  const chatCloseBtn = document.getElementById('chatCloseBtn');
+  const chatForm = document.getElementById('chatForm');
+  const chatInput = document.getElementById('chatInput');
+  const chatMessages = document.getElementById('chatMessages');
+
+  // Show chat
+  chatToggleBtn.addEventListener('click', () => {
+    chatBox.style.display = 'flex';
+    chatToggleBtn.style.display = 'none';
+    chatBox.setAttribute('aria-hidden', 'false');
+    chatInput.focus();
+  });
+
+  // Close chat
+  chatCloseBtn.addEventListener('click', () => {
+    chatBox.style.display = 'none';
+    chatToggleBtn.style.display = 'block';
+    chatBox.setAttribute('aria-hidden', 'true');
+  });
+
+  // Send message
+  chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    const userMsg = document.createElement('div');
+    userMsg.classList.add('message', 'user');
+    userMsg.textContent = message;
+    chatMessages.appendChild(userMsg);
+    chatInput.value = '';
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Bot reply
+    setTimeout(() => {
+      const botMsg = document.createElement('div');
+      botMsg.classList.add('message', 'bot');
+      botMsg.textContent = "Thanks for reaching out! We'll get back to you soon.";
+      chatMessages.appendChild(botMsg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 800);
+  });
+});

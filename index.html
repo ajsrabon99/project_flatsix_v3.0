@@ -34,6 +34,23 @@
 </head>
 
 <body>
+    <!-- Live Chat -->
+    <div id="liveChatContainer">
+        <button id="chatToggleBtn" aria-label="Open Live Chat">💬</button>
+        <div id="chatBox" aria-live="polite" aria-hidden="true">
+            <div id="chatHeader">
+                <span>Live Chat</span>
+                <button id="chatCloseBtn" aria-label="Close Live Chat">×</button>
+            </div>
+            <div id="chatMessages"></div>
+            <form id="chatForm" autocomplete="off">
+                <input type="text" id="chatInput" placeholder="Type your message..." required />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+
     <!-- Updated 3D Header -->
     <header class="Header text-white py-3 position-relative">
         <div class="container d-flex align-items-center justify-content-between">
@@ -1022,95 +1039,9 @@
         });
     </script>
 
-    <button id="backToTop" class="back-to-top">↑</button>
-
-    <div id="liveChatContainer">
-        <button id="chatToggleBtn" aria-label="Open Live Chat">💬</button>
-        <div id="chatBox" aria-live="polite" aria-hidden="true">
-            <div id="chatHeader">
-                <span>Live Chat</span>
-                <button id="chatCloseBtn" aria-label="Close Live Chat">×</button>
-            </div>
-            <div id="chatMessages"></div>
-            <form id="chatForm" autocomplete="off">
-                <input type="text" id="chatInput" placeholder="Type your message..." required />
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const backToTopBtn = document.getElementById('backToTop');
-            const heroSection = document.querySelector('.hero-section');
-
-            // Back to Top Show/Hide based on scroll
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                const heroHeight = heroSection ? heroSection.offsetHeight : 0;
-
-                if (scrollY > heroHeight) {
-                    backToTopBtn.classList.add('show');
-                } else {
-                    backToTopBtn.classList.remove('show');
-                }
-            });
-
-            // Scroll to Top Smoothly
-            backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // Live Chat Logic
-            const chatToggleBtn = document.getElementById('chatToggleBtn');
-            const chatBox = document.getElementById('chatBox');
-            const chatCloseBtn = document.getElementById('chatCloseBtn');
-            const chatForm = document.getElementById('chatForm');
-            const chatInput = document.getElementById('chatInput');
-            const chatMessages = document.getElementById('chatMessages');
-
-            if (chatToggleBtn && chatBox && chatCloseBtn && chatForm && chatInput && chatMessages) {
-                chatToggleBtn.addEventListener('click', () => {
-                    chatBox.style.display = 'flex';
-                    chatToggleBtn.style.display = 'none';
-                    chatBox.setAttribute('aria-hidden', 'false');
-                    chatInput.focus();
-                });
-
-                chatCloseBtn.addEventListener('click', () => {
-                    chatBox.style.display = 'none';
-                    chatToggleBtn.style.display = 'block';
-                    chatBox.setAttribute('aria-hidden', 'true');
-                });
-
-                chatForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const message = chatInput.value.trim();
-                    if (!message) return;
-
-                    const msgDiv = document.createElement('div');
-                    msgDiv.classList.add('message', 'user');
-                    msgDiv.textContent = message;
-                    chatMessages.appendChild(msgDiv);
-                    chatInput.value = '';
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-
-                    setTimeout(() => {
-                        const botMsg = document.createElement('div');
-                        botMsg.classList.add('message', 'bot');
-                        botMsg.textContent = "Thanks for reaching out! We'll get back to you soon.";
-                        chatMessages.appendChild(botMsg);
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
-                    }, 1000);
-                });
-            }
-        });
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
-
 </body>
 
 </html>

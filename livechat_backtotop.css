@@ -1,36 +1,9 @@
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  display: none;
-  background-color: #ff00dd;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 9998;
-  box-shadow: 0 0 10px rgba(255, 208, 0, 0.7);
-  transition: opacity 0.3s ease;
-}
-
-.back-to-top.show {
-  display: block;
-  opacity: 1;
-}
-
-#backToTop:hover {
-  background-color: #ffb800;
-}
-
-/* Live Chat */
+/* Live Chat Styles */
 #liveChatContainer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1100;
+  z-index: 99999;
   font-family: Arial, sans-serif;
 }
 
@@ -42,15 +15,15 @@
   height: 55px;
   font-size: 28px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #fff;
-  z-index: 1100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #chatBox {
   display: none;
+  flex-direction: column;
   position: fixed;
-  bottom: 80px;
+  bottom: 90px;
   right: 20px;
   width: 320px;
   max-height: 400px;
@@ -58,9 +31,8 @@
   color: #fff;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  flex-direction: column;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 99999;
 }
 
 #chatHeader {
@@ -82,7 +54,7 @@
 
 #chatMessages {
   padding: 10px;
-  height: 280px;
+  height: 250px;
   overflow-y: auto;
   font-size: 14px;
 }
