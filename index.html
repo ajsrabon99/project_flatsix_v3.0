@@ -1022,16 +1022,14 @@
         });
     </script>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to Top">↑</button>
+    <button id="backToTop" class="back-to-top">↑</button>
 
-    <!-- Live Chat Section -->
     <div id="liveChatContainer">
-        <button id="chatToggleButton" aria-label="Open Live Chat">💬</button>
+        <button id="chatToggleBtn" aria-label="Open Live Chat">💬</button>
         <div id="chatBox" aria-live="polite" aria-hidden="true">
             <div id="chatHeader">
                 <span>Live Chat</span>
-                <button id="chatCloseBtn" aria-label="Close Chat">×</button>
+                <button id="chatCloseBtn" aria-label="Close Live Chat">×</button>
             </div>
             <div id="chatMessages"></div>
             <form id="chatForm" autocomplete="off">
@@ -1040,7 +1038,6 @@
             </form>
         </div>
     </div>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1062,48 +1059,51 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            const chatToggleButton = document.getElementById('chatToggleButton');
+            const chatToggleBtn = document.getElementById('chatToggleBtn');
             const chatBox = document.getElementById('chatBox');
             const chatCloseBtn = document.getElementById('chatCloseBtn');
             const chatForm = document.getElementById('chatForm');
             const chatInput = document.getElementById('chatInput');
             const chatMessages = document.getElementById('chatMessages');
 
-            chatToggleBtn.addEventListener('click', () => {
-                chatBox.style.display = 'flex';
-                chatToggleBtn.style.display = 'none';
-                chatBox.setAttribute('aria-hidden', 'false');
-                chatInput.focus();
-            });
+            if (chatToggleBtn && chatBox && chatCloseBtn && chatForm && chatInput && chatMessages) {
+                chatToggleBtn.addEventListener('click', () => {
+                    chatBox.style.display = 'flex';
+                    chatToggleBtn.style.display = 'none';
+                    chatBox.setAttribute('aria-hidden', 'false');
+                    chatInput.focus();
+                });
 
-            chatCloseBtn.addEventListener('click', () => {
-                chatBox.style.display = 'none';
-                chatToggleBtn.style.display = 'block';
-                chatBox.setAttribute('aria-hidden', 'true');
-            });
+                chatCloseBtn.addEventListener('click', () => {
+                    chatBox.style.display = 'none';
+                    chatToggleBtn.style.display = 'block';
+                    chatBox.setAttribute('aria-hidden', 'true');
+                });
 
-            chatForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const message = chatInput.value.trim();
-                if (!message) return;
+                chatForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const message = chatInput.value.trim();
+                    if (!message) return;
 
-                const userMsg = document.createElement('div');
-                userMsg.classList.add('message', 'user');
-                userMsg.textContent = message;
-                chatMessages.appendChild(userMsg);
-                chatInput.value = '';
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-
-                setTimeout(() => {
-                    const botMsg = document.createElement('div');
-                    botMsg.classList.add('message', 'bot');
-                    botMsg.textContent = "Thanks! We'll respond soon.";
-                    chatMessages.appendChild(botMsg);
+                    const msgDiv = document.createElement('div');
+                    msgDiv.classList.add('message', 'user');
+                    msgDiv.textContent = message;
+                    chatMessages.appendChild(msgDiv);
+                    chatInput.value = '';
                     chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, 1000);
-            });
+
+                    setTimeout(() => {
+                        const botMsg = document.createElement('div');
+                        botMsg.classList.add('message', 'bot');
+                        botMsg.textContent = "Thanks for reaching out! We'll get back to you soon.";
+                        chatMessages.appendChild(botMsg);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }, 1000);
+                });
+            }
         });
     </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>

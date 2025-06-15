@@ -1,25 +1,24 @@
-/* Back to Top Button */
+/* Back to Top */
 .back-to-top {
   position: fixed;
-  bottom: 500px; /* Live chat এর উপরে রাখলাম */
+  bottom: 100px;
   right: 20px;
+  display: none;
   background-color: #ff00dd;
   border: none;
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  font-size: 24px;
-  color: white;
-  display: none;
+  font-size: 2rem;
   cursor: pointer;
   z-index: 9999;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 208, 0, 0.7);
+  transition: opacity 0.3s ease;
 }
+
 .back-to-top.show {
   display: block;
-}
-.back-to-top:hover {
-  background-color: #de03ae;
+  opacity: 1;
 }
 
 /* Live Chat */
@@ -31,30 +30,31 @@
   font-family: Arial, sans-serif;
 }
 
-#chatToggleButton {
+#chatToggleBtn {
   background-color: #ffd000;
   border: none;
   border-radius: 50%;
   width: 55px;
   height: 55px;
   font-size: 28px;
-  color: #fff;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
 
 #chatBox {
   display: none;
-  flex-direction: column;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
   width: 320px;
   max-height: 400px;
   background: #222;
   color: #fff;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  position: absolute;
-  bottom: 70px;
-  right: 0;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10001;
 }
 
 #chatHeader {
@@ -124,5 +124,5 @@
   border-radius: 20px;
   padding: 8px 16px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
 }
