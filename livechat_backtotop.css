@@ -1,0 +1,128 @@
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 500px; /* Live chat এর উপরে রাখলাম */
+  right: 20px;
+  background-color: #ff00dd;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  color: white;
+  display: none;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.back-to-top.show {
+  display: block;
+}
+.back-to-top:hover {
+  background-color: #de03ae;
+}
+
+/* Live Chat */
+#liveChatContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  font-family: Arial, sans-serif;
+}
+
+#chatToggleButton {
+  background-color: #ffd000;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#chatBox {
+  display: none;
+  flex-direction: column;
+  width: 320px;
+  max-height: 400px;
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+}
+
+#chatHeader {
+  background-color: #333;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#chatCloseBtn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#chatMessages {
+  padding: 10px;
+  height: 280px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+#chatMessages .message {
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  max-width: 75%;
+  clear: both;
+}
+
+#chatMessages .user {
+  background-color: #ffd000;
+  color: #222;
+  float: right;
+  text-align: right;
+}
+
+#chatMessages .bot {
+  background-color: #444;
+  float: left;
+}
+
+#chatForm {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #444;
+  background-color: #111;
+}
+
+#chatInput {
+  flex: 1;
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+#chatForm button {
+  background-color: #ffd000;
+  border: none;
+  margin-left: 10px;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}

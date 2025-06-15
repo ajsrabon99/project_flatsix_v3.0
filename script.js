@@ -98,3 +98,5 @@ seeMoreBtn.addEventListener('click', () => {
 
     seeMoreBtn.style.display = 'none'; // Hide button after loading more
 });
+
+

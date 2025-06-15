@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-ZNgbIszDfycXrH+kzRQAtdZ0pjr02dxByXMkM/Rc9MDYHCuX6SytE2g2A5D2cS9YQ6nV4SWRFUZ1q9cJz9HHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="livechat_backtotop.css">
 </head>
 
 <body>
@@ -1021,9 +1022,93 @@
         });
     </script>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">↑</button>
+
+    <!-- Live Chat Section -->
+    <div id="liveChatContainer">
+        <button id="chatToggleButton" aria-label="Open Live Chat">💬</button>
+        <div id="chatBox" aria-live="polite" aria-hidden="true">
+            <div id="chatHeader">
+                <span>Live Chat</span>
+                <button id="chatCloseBtn" aria-label="Close Chat">×</button>
+            </div>
+            <div id="chatMessages"></div>
+            <form id="chatForm" autocomplete="off">
+                <input type="text" id="chatInput" placeholder="Type your message..." required />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backToTopBtn = document.getElementById('backToTop');
+            const heroSection = document.querySelector('.hero-section');
+
+            window.addEventListener('scroll', () => {
+                if (!heroSection) return;
+
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                if (heroBottom <= 0) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            const chatToggleButton = document.getElementById('chatToggleButton');
+            const chatBox = document.getElementById('chatBox');
+            const chatCloseBtn = document.getElementById('chatCloseBtn');
+            const chatForm = document.getElementById('chatForm');
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+
+            chatToggleBtn.addEventListener('click', () => {
+                chatBox.style.display = 'flex';
+                chatToggleBtn.style.display = 'none';
+                chatBox.setAttribute('aria-hidden', 'false');
+                chatInput.focus();
+            });
+
+            chatCloseBtn.addEventListener('click', () => {
+                chatBox.style.display = 'none';
+                chatToggleBtn.style.display = 'block';
+                chatBox.setAttribute('aria-hidden', 'true');
+            });
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const message = chatInput.value.trim();
+                if (!message) return;
+
+                const userMsg = document.createElement('div');
+                userMsg.classList.add('message', 'user');
+                userMsg.textContent = message;
+                chatMessages.appendChild(userMsg);
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                setTimeout(() => {
+                    const botMsg = document.createElement('div');
+                    botMsg.classList.add('message', 'bot');
+                    botMsg.textContent = "Thanks! We'll respond soon.";
+                    chatMessages.appendChild(botMsg);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            });
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>
