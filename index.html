@@ -1044,21 +1044,24 @@
             const backToTopBtn = document.getElementById('backToTop');
             const heroSection = document.querySelector('.hero-section');
 
+            // Back to Top Show/Hide based on scroll
             window.addEventListener('scroll', () => {
-                if (!heroSection) return;
+                const scrollY = window.scrollY;
+                const heroHeight = heroSection ? heroSection.offsetHeight : 0;
 
-                const heroBottom = heroSection.getBoundingClientRect().bottom;
-                if (heroBottom <= 0) {
+                if (scrollY > heroHeight) {
                     backToTopBtn.classList.add('show');
                 } else {
                     backToTopBtn.classList.remove('show');
                 }
             });
 
+            // Scroll to Top Smoothly
             backToTopBtn.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
+            // Live Chat Logic
             const chatToggleBtn = document.getElementById('chatToggleBtn');
             const chatBox = document.getElementById('chatBox');
             const chatCloseBtn = document.getElementById('chatCloseBtn');
@@ -1103,7 +1106,6 @@
             }
         });
     </script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
