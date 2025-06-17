@@ -438,7 +438,6 @@
         });
     </script>
 
-
     <!-- Rent Details Section -->
     <section id="rent-section" class="rent-section py-5">
         <div class="container">
@@ -450,6 +449,15 @@
                 <button id="toggleTableBtn" class="btn btn-glow">▶ Show Rent Details</button>
             </div>
 
+            <!-- Loader (Initially Hidden) -->
+            <div id="rentLoader" class="text-center my-3" style="display: none;">
+                <div class="spinner-border text-info" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="text-white mt-3 fw-bold">Loading rent data...</p>
+            </div>
+
+            <!-- Rent Table -->
             <div id="rentTable" class="rent-table" style="display: none;">
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered text-center shadow-lg rounded">
@@ -553,14 +561,23 @@
         </div>
     </section>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6208705517596475"
-        crossorigin="anonymous"></script>
-    <!-- bachelor zone -->
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6208705517596475" data-ad-slot="4969372218"
-        data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <!-- AI Assistant Section -->
+    <section id="ai-assistant" class="py-5 text-white" style="background: #0f0f0f;">
+        <div class="container">
+            <h2 class="text-center mb-4 display-5 fw-bold text-gradient">🤖 Ask Your Assistant</h2>
+            <div class="ai-card-glass p-4 shadow-lg">
+                <div id="chat-box" class="chat-box-custom">
+                    <p><strong>Assistant:</strong> Hello! How can I help you today?</p>
+                </div>
+                <div class="input-group mt-3">
+                    <input type="text" id="user-input" class="form-control custom-input"
+                        placeholder="Ask something..." />
+                    <button id="mic-btn" class="btn btn-mic me-2"><i class="fas fa-microphone"></i></button>
+                    <button id="send-btn" class="btn btn-send">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Advance List Section -->
     <section id="advance-list-section" class="py-5 position-relative">
@@ -1016,14 +1033,35 @@
         document.addEventListener("DOMContentLoaded", function () {
             const toggleTableBtn = document.getElementById('toggleTableBtn');
             const rentTable = document.getElementById('rentTable');
+            const loader = document.getElementById('rentLoader');
+
+            let isLoaded = false; // First time loaded check
 
             toggleTableBtn.addEventListener('click', function () {
-                const isTableHidden = rentTable.style.display === 'none' || rentTable.style.display === '';
-                rentTable.style.display = isTableHidden ? 'block' : 'none';
-                toggleTableBtn.textContent = isTableHidden ? '⛔ Hide Rent Details' : '▶ Show Rent Details';
+                if (!isLoaded) {
+                    // প্রথমবার: Loader দেখাও, ২ সেকেন্ড delay
+                    loader.style.display = "block";
+                    rentTable.style.display = "none";
+                    toggleTableBtn.disabled = true;
+                    toggleTableBtn.innerText = "⏳ Loading...";
+
+                    setTimeout(() => {
+                        loader.style.display = "none";
+                        rentTable.style.display = "block";
+                        toggleTableBtn.disabled = false;
+                        toggleTableBtn.innerText = "⛔ Hide Rent Details";
+                        isLoaded = true; // এবার থেকে Loader আর লাগবে না
+                    }, 2000);
+                } else {
+                    // এরপরে: Loader ছাড়াই Toggle হবে
+                    const isTableVisible = rentTable.style.display === 'block';
+                    rentTable.style.display = isTableVisible ? 'none' : 'block';
+                    toggleTableBtn.innerText = isTableVisible ? '▶ Show Rent Details' : '⛔ Hide Rent Details';
+                }
             });
         });
     </script>
+
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BX8LR2YMZY"></script>
@@ -1086,6 +1124,81 @@
                 }, 800);
             });
         });
+    </script>
+    <script>
+        const chatBox = document.getElementById("chat-box");
+        const userInput = document.getElementById("user-input");
+        const sendBtn = document.getElementById("send-btn");
+        const micBtn = document.getElementById("mic-btn");
+
+        const answers = {
+            "Assalamu Alaikum": "Walaikum Salam how can I help you? Try something like: 'room rent', 'wifi bill', or 'meal cost'.",
+            "hello": "hlw, how can I help you? Try something like: 'room rent', 'wifi bill', or 'meal cost'.",
+            "hallo": "hlw, how can I help you? Try something like: 'room rent', 'wifi bill', or 'meal cost'.",
+            "hlw": "hlw, how can I help you? Try something like: 'room rent', 'wifi bill', or 'meal cost'.",
+            "room rent": "Each room's rent is between 2100–2500-2100৳ per person.",
+            "wifi bill": "The monthly WiFi bill is 100৳ per person.",
+            "meal cost": "On average, meal cost per person is around 2000৳ per month.",
+            "manager": "AJ Srabon is the current flat manager.",
+            "payment": "You can pay via bKash or Nagad to our official number.",
+            "electric bill": "Electricity bill is calculated based on current usage and shared equally.",
+            "member list": "You can see the full member list in the Member section.",
+            "meal manager": "This month’s meal manager is Sizar."
+        };
+
+        function typeMessage(message, sender = "Assistant") {
+            let index = 0;
+            const p = document.createElement("p");
+            p.innerHTML = `<strong>${sender}:</strong> `;
+            chatBox.appendChild(p);
+
+            const typing = setInterval(() => {
+                if (index < message.length) {
+                    p.innerHTML += message.charAt(index);
+                    index++;
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                } else {
+                    clearInterval(typing);
+                }
+            }, 25);
+        }
+
+        sendBtn.addEventListener("click", () => {
+            const question = userInput.value.trim().toLowerCase();
+            if (!question) return;
+
+            chatBox.innerHTML += `<p><strong>You:</strong> ${question}</p>`;
+            userInput.value = "";
+
+            let answer = "❌ Sorry, I didn't understand that. Try something like: 'room rent', 'wifi bill', or 'meal cost'.";
+            for (const key in answers) {
+                if (question.includes(key)) {
+                    answer = answers[key];
+                    break;
+                }
+            }
+
+            setTimeout(() => typeMessage(answer), 500);
+        });
+
+        // Voice Input
+        const recognition = window.SpeechRecognition || window.webkitSpeechRecognition ? new (window.SpeechRecognition || window.webkitSpeechRecognition)() : null;
+
+        if (recognition) {
+            recognition.lang = "en-US";
+
+            micBtn.addEventListener("click", () => {
+                recognition.start();
+            });
+
+            recognition.onresult = (event) => {
+                const speechResult = event.results[0][0].transcript;
+                userInput.value = speechResult;
+                sendBtn.click();
+            };
+        } else {
+            micBtn.style.display = "none"; // Hide mic if not supported
+        }
     </script>
 </body>
 
