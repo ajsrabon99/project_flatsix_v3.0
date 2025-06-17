@@ -15,53 +15,6 @@
 /* ==================== MOBILE: General Layout (≤768px) ==================== */
 @media screen and (max-width: 768px) {
 
-  /* Contact Section */
-  .contact-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 10px;
-  }
-
-  .contact-form,
-  .contact-info {
-    width: 100%;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-
-  .contact-form textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-
-  .contact-form button {
-    font-size: 16px;
-    padding: 10px 20px;
-    width: 100%;
-  }
-
-  .contact-info .icon {
-    font-size: 20px;
-    margin-right: 8px;
-  }
-
-  .social-icon {
-    margin-top: 10px;
-  }
-
-  .social-icon a {
-    font-size: 20px;
-    margin: 0 6px;
-    display: inline-block;
-  }
-
   /* Footer */
   .footer {
     padding: 2rem 1rem;
@@ -221,5 +174,65 @@
 
   #advance-list-section {
     padding: 40px 15px;
+  }
+}
+
+/* Smaller screens (≤480px) adjustments */
+@media (max-width: 480px) {
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .contact-form textarea {
+    min-height: 100px;
+  }
+
+  .contact-form button {
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  .social-icon a {
+    font-size: 20px;
+    margin: 0 8px;
+  }
+}
+
+/* ✅ Tablet screens (≥768px): two columns */
+@media (min-width: 768px) {
+  .contact-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20rem;
+    max-width: 500px;
+    padding: 2rem 1rem;
+  }
+
+  .text-glow {
+    font-size: 2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1.1rem;
+  }
+
+  .contact-form button {
+    font-size: 18px;
+    padding: 14px 0;
+  }
+}
+
+/* ✅ Desktop and up (≥1024px): max width and larger padding */
+@media (min-width: 1024px) {
+  .contact-section {
+    max-width: 1200px;
+    padding: 50px 30px;
+  }
+
+  .text-glow {
+    font-size: 2.2rem;
   }
 }
