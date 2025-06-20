@@ -98,3 +98,13 @@ seeMoreBtn.addEventListener('click', () => {
 
   seeMoreBtn.style.display = 'none'; // Hide button after loading more
 });
+
+fetch("https://flat-assistant-backend.onrender.com", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ message: "What's the rent?" })
+})
+.then(res => res.json())
+.then(data => {
+  console.log(data.reply); // UI তে দেখাও
+});
